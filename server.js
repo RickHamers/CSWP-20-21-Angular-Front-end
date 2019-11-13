@@ -21,7 +21,7 @@ app.use(compression());
 // Replace the name below to match your own "defaultProject" value!
 //
 // Serve only the static files form the dist directory
-app.use(express.static(path.join(__dirname, 'dist/CSWP-Angular-Frontend')));
+app.use(express.static(path.join(__dirname, 'dist/cswp-angular-nr2128706-yr1920')));
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname + '/dist/cswp-angular-nr2128706-yr1920/index.html'));
