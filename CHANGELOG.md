@@ -1,5 +1,17 @@
 # Changelog
 
+## [RHa] - Version 1.4.1 - 2019-13-11
+### Fix login functionality
+* Fix login functionality formsModule
+* Rectify layout issues
+* Fix component tests
+
+## [RHa] - Version 1.4.0 - 2019-13-11
+### Update login functionality
+* Add form to login.component.html
+* Add authentication.service.ts 
+* Add back-end API connection
+
 ## [RHa] - Version 1.3.0 - 2019-13-11
 ### Update about component
 * Add content to about.component.html
