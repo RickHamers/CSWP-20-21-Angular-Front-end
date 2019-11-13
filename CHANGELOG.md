@@ -1,7 +1,13 @@
 # Changelog
 
+## [RHa] - Version 1.2.0 - 2019-13-11
+### Initial Navigation
+* Add navigation-menu component
+* Rectify styling & page layout
+* Add simple side-bar menu
+
 ## [RHa] - Version 1.1.0 - 2019-13-11
-### Initial setup
+### Initial Routing
 * Add login component
 * Edit not-found component
 * Add bootstrap 

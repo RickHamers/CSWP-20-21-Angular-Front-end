@@ -1,6 +1,6 @@
 {
   "name": "cswp-angular-nr2128706-yr1920",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "scripts": {
     "ng": "ng",
     "start": "node server.js",

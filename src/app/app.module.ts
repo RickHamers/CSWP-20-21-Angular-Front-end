@@ -7,13 +7,16 @@ import { AppComponent } from './app.component';
 import { AboutComponent } from './about/about.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginComponent } from './login/login.component';
+import { NavigationMenuComponent } from './navigation-menu/navigation-menu.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutComponent,
     NotFoundComponent,
-    LoginComponent
+    LoginComponent,
+    NavigationMenuComponent,
   ],
   imports: [
     NgbModule,
