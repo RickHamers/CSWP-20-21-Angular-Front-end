@@ -1,8 +1,16 @@
 //Rick Hamers - 2019-11-13 10:04
 //app.component.scss - stylesheet for app.component
 
-.container {
-    position: absolute;
-    top: 10%;
-    left: 55%;
+.sidebar {
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.router-outlet {
+  flex: 1;
+  position: relative;
+  margin-left: 250px;
+  padding: 1rem;
 }

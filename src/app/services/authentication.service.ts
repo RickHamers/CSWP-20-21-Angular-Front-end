@@ -1,5 +1,5 @@
-//Rick Hamers - 2019-11-13 15:21
-//authentication.service.ts - provide authentication functionality & utility
+// Rick Hamers - 2019-11-13 15:21
+// authentication.service.ts - provide authentication functionality & utility
 
 import { Injectable } from '@angular/core';
 import {Router} from '@angular/router';

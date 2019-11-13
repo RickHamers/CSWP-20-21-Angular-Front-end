@@ -5,7 +5,7 @@
           <hr class="my-4">
         </div>
         <!-- TO BE ADDED: [FormGroup]="loginForm" -->
-        <form class="form-login" (ngSubmit)="onSubmit()">
+        <form [formGroup]="loginForm" class="form-login" (ngSubmit)="onSubmit()">
           <div class="form-group">
             <label>Username:</label>
             <input title="username" type="text" class="form-control" formControlName="username" required>
