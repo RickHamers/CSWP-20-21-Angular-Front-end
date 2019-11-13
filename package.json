@@ -1,6 +1,6 @@
 {
   "name": "cswp-angular-nr2128706-yr1920",
-  "version": "0.0.0",
+  "version": "1.2.0",
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
@@ -21,6 +21,7 @@
     "@angular/platform-browser": "~8.2.13",
     "@angular/platform-browser-dynamic": "~8.2.13",
     "@angular/router": "~8.2.13",
+    "@ng-bootstrap/ng-bootstrap": "^5.1.4",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
