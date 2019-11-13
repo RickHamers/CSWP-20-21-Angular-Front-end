@@ -1,6 +1,6 @@
 {
   "name": "cswp-angular-nr2128706-yr1920",
-  "version": "1.2.0",
+  "version": "1.4.1",
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
@@ -24,6 +24,7 @@
     "@ng-bootstrap/ng-bootstrap": "^5.1.4",
     "compression": "^1.7.4",
     "express": "^4.17.1",
+    "moment": "^2.24.0",
     "path": "^0.12.7",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
