@@ -11,8 +11,8 @@
             <li>
                 <a routerLink="about">About</a>
             </li>
-            <li>
-                    <a routerLink="not-found">404</a>
+            <li class="logout" *ngIf="isLoggedIn$ | async">
+                    <a href="javascript:void(0)" (click)="onLogout()"><p class="lead">Log out</p></a>
             </li>
         </ul>
     </nav>
