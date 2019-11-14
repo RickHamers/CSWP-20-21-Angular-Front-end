@@ -1,20 +1,34 @@
 <!-- navigation-menu.component.html -->
+
 <div class="wrapper">
-    <nav id="sidebar">
-        <div class="sidebar-header">
-            <h3>ZolderOpruiming</h3>
-        </div>
-        <ul class="list-unstyled components">
-            <li>
-                <a routerLink="login">Home</a>
-            </li>   
-            <li>
-                <a routerLink="about">About</a>
-            </li>
-            <li class="logout" *ngIf="isLoggedIn$ | async">
-                    <a href="javascript:void(0)" (click)="onLogout()"><p class="lead">Log out</p></a>
-            </li>
-        </ul>
-    </nav>
-</div>
+        <!-- Sidebar Holder -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Zolderopruiming</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <p>Menu</p>
+                <li>
+                    <a routerLink="login">Home</a>
+                </li>
+                <li>
+                    <a routerLink="about">About</a>
+                </li>
+                <li>
+                    <a routerLink="not-found">placeholder</a>
+                </li>
+                <li>
+                    <a routerLink="not-found">placeholder</a>
+                </li>
+            </ul>
+            <ul class="list-unstyled CTAs" *ngIf="isLoggedIn$ | async">
+                <li><a href="javascript:void(0)" (click)="onLogout()" class="logout">Log out</a></li>
+            </ul>
+        </nav>
+
+
+
+
+
 
