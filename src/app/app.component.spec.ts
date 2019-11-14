@@ -1,15 +1,28 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
+import {AboutComponent} from './components/about/about.component';
+import {NotFoundComponent} from './components/not-found/not-found.component';
+import {LoginComponent} from './components/login/login.component';
+import {NavigationMenuComponent} from './components/navigation-menu/navigation-menu.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        FormsModule,
+        HttpClientModule,
+        ReactiveFormsModule
       ],
       declarations: [
-        AppComponent
+        AppComponent,
+        AboutComponent,
+        NotFoundComponent,
+        LoginComponent,
+        NavigationMenuComponent
       ],
     }).compileComponents();
   }));
@@ -24,12 +37,5 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app.title).toEqual('cswp-angular-nr2128706-yr1920');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('cswp-angular-nr2128706-yr1920 app is running!');
   });
 });
