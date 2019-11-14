@@ -10,6 +10,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { LoginComponent } from './components/login/login.component';
 import { NavigationMenuComponent } from './components/navigation-menu/navigation-menu.component';
 import { RegisterComponent } from './components/register/register.component';
+import { AdvertisementIndexComponent } from './components/advertisement-index/advertisement-index.component';
+import { AdvertisementCreateComponent } from './components/advertisement-create/advertisement-create.component';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { RegisterComponent } from './components/register/register.component';
     NotFoundComponent,
     LoginComponent,
     NavigationMenuComponent,
-    RegisterComponent
+    RegisterComponent,
+    AdvertisementIndexComponent,
+    AdvertisementCreateComponent
   ],
   imports: [
     FormsModule,
