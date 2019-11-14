@@ -1,6 +1,12 @@
 # Changelog
 
-## [RHa] - Version 1.5.0 - 2019-13-14
+## [RHa] - Version 1.6.0 - 2019-11-14
+### Add logout functionality
+* Add logout button to navigation-menu.component
+* Add logout function to authentication.service
+* Add show/hide button based on isLoggedIn observable
+
+## [RHa] - Version 1.5.0 - 2019-11-14
 ### Add register functionality
 * Add register.component
 * Add form to register.component.html
