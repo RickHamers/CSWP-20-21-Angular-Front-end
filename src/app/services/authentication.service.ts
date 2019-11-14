@@ -78,6 +78,14 @@ export class AuthenticationService {
     );
   }
 
+  public logout() {
+    localStorage.removeItem('x-access-token');
+    localStorage.removeItem('expiresAt');
+    localStorage.removeItem('username');
+    localStorage.removeItem('userID');
+    this.isLoggedIn$.next(false);
+  }
+
   get isLoggedIn() {
     return this.isLoggedIn$.asObservable();
   }
