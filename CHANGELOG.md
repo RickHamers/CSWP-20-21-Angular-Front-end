@@ -1,5 +1,12 @@
 # Changelog
 
+## [RHa] - Version 1.6.1 - 2019-11-14
+### Update/Fix navigation-menu.component
+* Update/Fix navigation-menu.component colour
+* Update/Fix navigation-menu.component routing
+* Update/Fix not-found.component position
+* Re-route login button to new component (to be added)
+
 ## [RHa] - Version 1.6.0 - 2019-11-14
 ### Add logout functionality
 * Add logout button to navigation-menu.component

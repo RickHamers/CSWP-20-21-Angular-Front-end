@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
       .subscribe(
         () => {
         console.log('login succeeded');
-        this.router.navigate(['/about']);
+        this.router.navigate(['/advertisement-index']);
         },
         () => {
           console.log('login failed');
