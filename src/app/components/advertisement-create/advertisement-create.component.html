@@ -1,0 +1,18 @@
+<!-- advertisement-create.component.html -->
+
+    <div class="text-lg-center">
+      <h1 class="display-4">Create an advertisement</h1>
+      <hr class="my-4">
+    </div>
+  <form [formGroup]="advertisementForm" class="form-advertisement" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label>Title:</label>
+      <input title="title" type="text" class="form-control" formControlName="title" required>
+    </div>
+    <div class="form-group">
+      <label>Content:</label>
+      <textarea rows="5" title="content" type="text" class="form-control" formControlName="content" required></textarea>
+    </div>
+    <button type="submit" [disabled]="!advertisementForm.valid" class="btn btn-primary">Create advertisement</button>
+  </form>
+  

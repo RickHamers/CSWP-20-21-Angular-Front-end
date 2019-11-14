@@ -10,16 +10,16 @@
             <ul class="list-unstyled components">
                 <p>Menu</p>
                 <li>
-                    <a routerLink="login">Home</a>
+                    <a routerLink="advertisement-index">Home</a>
+                </li>
+                <li>
+                    <a routerLink="advertisement-create">New advertisement</a>
+                </li>
+                <li>
+                    <a routerLink="not-found">placeholder</a>
                 </li>
                 <li>
                     <a routerLink="about">About</a>
-                </li>
-                <li>
-                    <a routerLink="not-found">placeholder</a>
-                </li>
-                <li>
-                    <a routerLink="not-found">placeholder</a>
                 </li>
             </ul>
             <ul class="list-unstyled CTAs" *ngIf="isLoggedIn$ | async">
