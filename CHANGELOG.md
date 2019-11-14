@@ -1,5 +1,11 @@
 # Changelog
 
+## [RHa] - Version 1.7.0 - 2019-11-14
+### Add initial advertisement functionality
+* Add advertisement service
+* Add initial get & create advertisement views
+* Add initial get & create advertisement functionality
+
 ## [RHa] - Version 1.6.1 - 2019-11-14
 ### Update/Fix navigation-menu.component
 * Update/Fix navigation-menu.component colour
