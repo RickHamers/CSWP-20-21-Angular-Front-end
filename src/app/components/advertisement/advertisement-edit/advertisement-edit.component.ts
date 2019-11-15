@@ -12,10 +12,10 @@ import { AuthenticationService } from '../../../services/authentication.service'
 })
 export class AdvertisementEditComponent implements OnInit {
 
-  private editAdvertisementForm: FormGroup;
-  private advertisement;
+  editAdvertisementForm: FormGroup;
+  advertisement;
   isLoading: boolean = true;
-  private getAdvertisementSubscription: Subscription;
+  getAdvertisementSubscription: Subscription;
 
   constructor(private activatedRoute: ActivatedRoute, private advertisementService: AdvertisementService, private authservice: AuthenticationService, private router: Router) { }
 
