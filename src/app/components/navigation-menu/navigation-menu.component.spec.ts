@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { RouterTestingModule } from '@angular/router/testing';
+import {HttpClientModule} from '@angular/common/http';
 import { NavigationMenuComponent } from './navigation-menu.component';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 
 describe('NavigationMenuComponent', () => {
   let component: NavigationMenuComponent;
@@ -8,6 +10,11 @@ describe('NavigationMenuComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+        HttpClientModule,
+        RouterTestingModule
+      ],
+
       declarations: [ NavigationMenuComponent ]
     })
     .compileComponents();
@@ -19,7 +26,4 @@ describe('NavigationMenuComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
 });

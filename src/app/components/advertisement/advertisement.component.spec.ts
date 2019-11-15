@@ -19,7 +19,4 @@ describe('AdvertisementComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
 });

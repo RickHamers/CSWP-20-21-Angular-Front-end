@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { AdvertisementCreateComponent } from './advertisement-create.component';
+import { FormGroup } from '@angular/forms';
 
 describe('AdvertisementCreateComponent', () => {
   let component: AdvertisementCreateComponent;
@@ -8,6 +8,9 @@ describe('AdvertisementCreateComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+        FormGroup
+      ],
       declarations: [ AdvertisementCreateComponent ]
     })
     .compileComponents();

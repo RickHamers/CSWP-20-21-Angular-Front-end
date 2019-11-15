@@ -1,5 +1,9 @@
 # Changelog
 
+## [RHa] - Version 2.1.1 - 2019-11-15
+### Fix 7 tests
+* Fix 7 failing test
+
 ## [RHa] - Version 2.1.0 - 2019-11-15
 ### Update navigation menu & enviroments
 * Additions/Changes to the navigation menu
