@@ -12,7 +12,10 @@ import { AdvertisementComponent } from './components/advertisement/advertisement
 import { AdvertisementIndexComponent } from './components/advertisement/advertisement-index/advertisement-index.component';
 import { AdvertisementCreateComponent } from './components/advertisement/advertisement-create/advertisement-create.component';
 import { AdvertisementDetailComponent } from './components/advertisement/advertisement-detail/advertisement-detail.component';
+import { AdvertisementEditComponent } from './components/advertisement/advertisement-edit/advertisement-edit.component';
+
 import {NotFoundComponent} from './components/not-found/not-found.component';
+
 
 const routes: Routes = [
   //Authentication
@@ -25,7 +28,9 @@ const routes: Routes = [
       {path: '', redirectTo: 'index', pathMatch: 'full'}, 
       {path: 'index', component: AdvertisementIndexComponent},
       {path: 'create', component: AdvertisementCreateComponent},
+      {path: 'detail/:id/edit', component: AdvertisementEditComponent},
       {path: 'detail/:id', component: AdvertisementDetailComponent},
+    
     ]
   },
   
