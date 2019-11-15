@@ -1,0 +1,60 @@
+<!-- about-summary.component.html -->
+
+<div class="row">
+    <div class="col-sm-6 col-md-8 col-lg-9">
+      <h3>Summary</h3>
+      <p> This application was made for the course 'Clientside web frameworks' at Avans Hogeschool Breda. </p>
+      <h3>CSWP Angular Front-end</h3>
+      <p>
+        This Front-end serves provides a place for end-users to put up their belongs for sale, akin to Tweakers.net vraag en aanbod & Marktplaats.
+        You can create advertisements on which people can comment and bid.
+        You can only edit or delete comments or advertisements if they are your own. You can only bid on items they're on other people's advertisements.
+        However, you can comments on other people's threads as well as reply to other people's comments. You also have the ability to like or dislike
+        (or upvote/downvote) comments.You have a user profile which you can edit. You can change your password, for example.
+      </p>
+    </div>
+    <div class="col-sm-6 col-md-4 col-lg-3">
+      <div class="card">
+        <div class="d-flex justify-content-center align-items-center">
+          <img alt="..." class="card-img-top rounded-circle border profile-pic" src="../../../assets/img/RHa_192px.jpg"></div>
+        <div class="card-body">
+          <h5 class="card-title">Rick Hamers</h5>
+          <p class="card-text"> Studentnummer: 2128706 </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h3>Entities</h3>
+  <div class="row">
+    <div class="col-sm-12 col-md-4">
+      <p class="lead">User</p>
+      <ul>
+        <li>Username: string (Unique)</li>
+        <li>Password: string</li>
+      </ul>
+    </div>
+    <div class="col-sm-12 col-md-4">
+      <p class="lead">Advertisement</p>
+      <ul>
+        <li>Title: string</li>
+        <li>Image: image</li>
+        <li>Content: string</li>
+        <li>Author (Username): string</li>
+        <li>Upvote: number</li>
+        <li>Downvote: number</li>
+        <li>Comments: list of comment entities</li>
+      </ul>
+    </div>
+    <div class="col-sm-12 col-md-4">
+      <p class="lead">Comment</p>
+      <ul>
+        <li>Content: string</li>
+        <li>Advertisement-ID: number</li>
+        <li>Author (Username): string</li>
+        <li>Upvote: number</li>
+        <li>Downvote: number</li>
+        <li>Sub-comments: List of comment entities</li>
+      </ul>
+    </div>
+  </div>
+  

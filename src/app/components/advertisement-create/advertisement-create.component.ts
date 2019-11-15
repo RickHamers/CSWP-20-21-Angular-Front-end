@@ -28,7 +28,7 @@ export class AdvertisementCreateComponent implements OnInit {
       .subscribe(
         () => {
           console.log('post advertisement succeeded');
-          this.router.navigate(['/index']);
+          this.router.navigate(['/advertisement-index']);
         },
         () => {
           console.log('post advertisement failed');

@@ -1,140 +1,15 @@
 <!-- about.component.html -->
 
-<div class="row">
-        <div class="col-sm-6 col-md-8 col-lg-9">
-          <h1>About this application</h1>
-          <p> This application was made for the course 'Clientside web frameworks' at Avans Hogeschool Breda. </p>
-          <h3>CSWP Angular Front-end</h3>
-          <p>
-            This Front-end serves provides a place for end-users to put up their belongs for sale, akin to Tweakers.net vraag en aanbod & Marktplaats.
-            You can create advertisements on which people can comment and bid.
-            You can only edit or delete comments or advertisements if they are your own. You can only bid on items they're on other people's advertisements.
-            However, you can comments on other people's threads as well as reply to other people's comments. You also have the ability to like or dislike
-            (or upvote/downvote) comments.You have a user profile which you can edit. You can change your password, for example.
-          </p>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3">
-          <div class="card">
-            <div class="d-flex justify-content-center align-items-center">
-              <img alt="..." class="card-img-top rounded-circle border profile-pic" src="../../../assets/img/RHa_192px.jpg"></div>
-            <div class="card-body">
-              <h5 class="card-title">Rick Hamers</h5>
-              <p class="card-text"> Studentnummer: 2128706 </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <h3>Entities</h3>
-      <div class="row">
-        <div class="col-sm-12 col-md-4">
-          <p>User</p>
-          <ul>
-            <li>Username: string (Unique)</li>
-            <li>Password: string</li>
-          </ul>
-        </div>
-        <div class="col-sm-12 col-md-4">
-          <p>Advertisement</p>
-          <ul>
-            <li>Title: string</li>
-            <li>Image: image</li>
-            <li>Content: string</li>
-            <li>Author (Username): string</li>
-            <li>Upvote: number</li>
-            <li>Downvote: number</li>
-            <li>Comments: list of comment entities</li>
-          </ul>
-        </div>
-        <div class="col-sm-12 col-md-4">
-          <p>Comment</p>
-          <ul>
-            <li>Content: string</li>
-            <li>Advertisement-ID: number</li>
-            <li>Author (Username): string</li>
-            <li>Upvote: number</li>
-            <li>Downvote: number</li>
-            <li>Sub-comments: List of comment entities</li>
-          </ul>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12">
-          <h3>Use Cases</h3>
-          <p>The following functionality is available in this application.</p>
-          <div>
-            <table class="table table-sm table-bordered">
-              <tbody>
-                <tr class="table-primary">
-                  <th scope="row" style="width: 16.66%">Naam</th>
-                  <td><strong>UC-01 Registering an account</strong></td>
-                </tr>
-                <tr>
-                  <th scope="row">Description</th>
-                  <td>A user creates a user-account</td>
-                </tr>
-                <tr>
-                  <th scope="row">Actor</th>
-                  <td>Regular user</td>
-                </tr>
-                <tr>
-                  <th scope="row">Precondition</th>
-                  <td>N/A</td>
-                </tr>
-                <tr>
-                  <th scope="row">Scenario</th>
-                  <td>
-                    <ol>
-                      <li>User clicks on the "Don't have an account yet? Click here!" link</li>
-                      <li>User fills in a valid Username and Password and clicks the "Create account" button</li>
-                      <li>The application validates whether an account with the credentials or username already exists.</li>
-                      <li>The application validates whether the input values match the minimum requirements.</li>
-                      <li>Upon acknowledgement of a valid registration attempt, the account will be created. The user will be taken to the Login page.</li>
-                    </ol>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">Postcondition</th>
-                  <td>The actor has a user-account and can log in.</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div>
-            <table class="table table-sm table-bordered">
-              <tbody>
-                <tr class="table-primary">
-                  <th scope="row" style="width: 16.66%">Name</th>
-                  <td><strong>UC-02 Logging in</strong></td>
-                </tr>
-                <tr>
-                  <th scope="row">Description</th>
-                  <td>An existing user logs in.</td>
-                </tr>
-                <tr>
-                  <th scope="row">Actor</th>
-                  <td>Regular user</td>
-                </tr>
-                <tr>
-                  <th scope="row">Precondition</th>
-                  <td>User has a user-account</td>
-                </tr>
-                <tr>
-                  <th scope="row">Scenario</th>
-                  <td>
-                    <ol>
-                      <li>User fills in the Username and Password fields correctly and clicks on the "Log in" button.</li>
-                      <li>The application validates the login attempt.</li>
-                      <li>Upon acknowledgement of a valid login attempt, the user will be logged in and greeted with the thread index page.</li>
-                    </ol>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">Postcondition</th>
-                  <td>The actor is logged in and loaded into the thread index page</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      
+<!-- about.component.html -->
+
+<div class="text-lg-center">
+  <h1 class="display-4">About</h1>
+  <hr class="my-4">
+</div>
+<p class="lead">
+  <a [routerLink]="['./summary']">Summary</a> |
+  <a [routerLink]="['./use-cases']">Use cases</a>
+</p>
+
+<router-outlet></router-outlet>
       

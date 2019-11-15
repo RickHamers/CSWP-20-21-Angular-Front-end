@@ -1,0 +1,82 @@
+<!-- about-use-cases.component.html -->
+
+<div class="row">
+    <div class="col-12">
+      <h3>Use Cases</h3>
+      <p>The following functionality is available in this application.</p>
+      <div>
+        <table class="table table-sm table-bordered">
+          <tbody>
+            <tr class="table-primary">
+              <th scope="row" style="width: 16.66%">Naam</th>
+              <td><strong>UC-01 Registering an account</strong></td>
+            </tr>
+            <tr>
+              <th scope="row">Description</th>
+              <td>A user creates a user-account</td>
+            </tr>
+            <tr>
+              <th scope="row">Actor</th>
+              <td>Regular user</td>
+            </tr>
+            <tr>
+              <th scope="row">Precondition</th>
+              <td>N/A</td>
+            </tr>
+            <tr>
+              <th scope="row">Scenario</th>
+              <td>
+                <ol>
+                  <li>User clicks on the "Don't have an account yet? Click here!" link</li>
+                  <li>User fills in a valid Username and Password and clicks the "Create account" button</li>
+                  <li>The application validates whether an account with the credentials or username already exists.</li>
+                  <li>The application validates whether the input values match the minimum requirements.</li>
+                  <li>Upon acknowledgement of a valid registration attempt, the account will be created. The user will be taken to the Login page.</li>
+                </ol>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">Postcondition</th>
+              <td>The actor has a user-account and can log in.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <table class="table table-sm table-bordered">
+          <tbody>
+            <tr class="table-primary">
+              <th scope="row" style="width: 16.66%">Name</th>
+              <td><strong>UC-02 Logging in</strong></td>
+            </tr>
+            <tr>
+              <th scope="row">Description</th>
+              <td>An existing user logs in.</td>
+            </tr>
+            <tr>
+              <th scope="row">Actor</th>
+              <td>Regular user</td>
+            </tr>
+            <tr>
+              <th scope="row">Precondition</th>
+              <td>User has a user-account</td>
+            </tr>
+            <tr>
+              <th scope="row">Scenario</th>
+              <td>
+                <ol>
+                  <li>User fills in the Username and Password fields correctly and clicks on the "Log in" button.</li>
+                  <li>The application validates the login attempt.</li>
+                  <li>Upon acknowledgement of a valid login attempt, the user will be logged in and greeted with the thread index page.</li>
+                </ol>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">Postcondition</th>
+              <td>The actor is logged in and loaded into the thread index page</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
