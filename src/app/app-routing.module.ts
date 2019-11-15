@@ -42,8 +42,8 @@ const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
 
   // Catch all non-existing paths and show a 404 component
-  // {path: 'not-found', component: NotFoundComponent},
-  // {path: '**', redirectTo: 'not-found', pathMatch: 'full'}
+  {path: 'not-found', component: NotFoundComponent},
+  {path: '**', redirectTo: 'not-found', pathMatch: 'full'}
 ];
 
 @NgModule({
