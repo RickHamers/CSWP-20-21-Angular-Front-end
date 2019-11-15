@@ -1,5 +1,11 @@
 # Changelog
 
+## [RHa] - Version 1.8.1 - 2019-11-15
+### Temporary login fix
+* Fix child routing for several components
+* Refactor several components
+* Code cleanup
+
 ## [RHa] - Version 1.8.0 - 2019-11-15
 ### Temporary login fix
 * Add child routing for about
