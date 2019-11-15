@@ -1,5 +1,14 @@
 # Changelog
 
+## [RHa] - Version 1.8.0 - 2019-11-15
+### Temporary login fix
+* Add child routing for about
+* Split about into multiple components
+
+## [RHa] - Version 1.7.0 - 2019-11-14
+### Temporary login fix
+* Add temporary /login navigation item to the navigation menu
+
 ## [RHa] - Version 1.7.0 - 2019-11-14
 ### Add initial advertisement functionality
 * Add advertisement service

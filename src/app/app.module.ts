@@ -12,6 +12,9 @@ import { NavigationMenuComponent } from './components/navigation-menu/navigation
 import { RegisterComponent } from './components/register/register.component';
 import { AdvertisementIndexComponent } from './components/advertisement-index/advertisement-index.component';
 import { AdvertisementCreateComponent } from './components/advertisement-create/advertisement-create.component';
+import { AdvertisementDetailComponent } from './components/advertisement-detail/advertisement-detail.component';
+import { AboutSummaryComponent } from './components/about/about-summary/about-summary.component';
+import { AboutUseCasesComponent } from './components/about/about-use-cases/about-use-cases.component';
 
 
 @NgModule({
@@ -23,7 +26,10 @@ import { AdvertisementCreateComponent } from './components/advertisement-create/
     NavigationMenuComponent,
     RegisterComponent,
     AdvertisementIndexComponent,
-    AdvertisementCreateComponent
+    AdvertisementCreateComponent,
+    AdvertisementDetailComponent,
+    AboutSummaryComponent,
+    AboutUseCasesComponent
   ],
   imports: [
     FormsModule,
