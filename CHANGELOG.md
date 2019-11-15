@@ -1,20 +1,25 @@
 # Changelog
 
+## [RHa] - Version 1.9.1 - 2019-11-15
+### Fix build error
+* Fix Heroku build
+* Rectify CHANGELOG.md issues
+
 ## [RHa] - Version 1.9.0 - 2019-11-15
-### Temporary login fix
+### Add edit advertisement functionality
 * Add edit advertisement component
 * Add edit advertisement routing
 * Add edit advertisement functionality
 * Refactor/Code cleanup
 
 ## [RHa] - Version 1.8.1 - 2019-11-15
-### Temporary login fix
+### Fix child routing
 * Fix child routing for several components
 * Refactor several components
 * Code cleanup
 
 ## [RHa] - Version 1.8.0 - 2019-11-15
-### Temporary login fix
+### Add about component child routing
 * Add child routing for about
 * Split about into multiple components
 
