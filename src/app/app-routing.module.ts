@@ -1,24 +1,33 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {AboutComponent } from './components/about/about.component';
-import { AboutSummaryComponent } from './components/about/about-summary/about-summary.component'
-import { AboutUseCasesComponent } from './components/about/about-use-cases/about-use-cases.component'
-import {NotFoundComponent} from './components/not-found/not-found.component';
-import {LoginComponent} from './components/login/login.component';
+import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
-import { AdvertisementIndexComponent } from './components/advertisement-index/advertisement-index.component';
-import { AdvertisementCreateComponent } from './components/advertisement-create/advertisement-create.component';
+import { AboutComponent } from './components/about/about.component';
+import { AboutSummaryComponent } from './components/about/about-summary/about-summary.component';
+import { AboutUseCasesComponent } from './components/about/about-use-cases/about-use-cases.component';
+import { AdvertisementComponent } from './components/advertisement/advertisement.component'
+import { AdvertisementIndexComponent } from './components/advertisement/advertisement-index/advertisement-index.component';
+import { AdvertisementCreateComponent } from './components/advertisement/advertisement-create/advertisement-create.component';
 import { AdvertisementDetailComponent } from './components/advertisement-detail/advertisement-detail.component';
-
+import {NotFoundComponent} from './components/not-found/not-found.component';
 
 const routes: Routes = [
+  //Authentication
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'advertisement-index', component: AdvertisementIndexComponent},
-  {path: 'advertisement-create', component: AdvertisementCreateComponent},
-  {path: 'advertisement-detail/:id', component: AdvertisementDetailComponent},
+
+  //Advertisement
+  {path: 'advertisement', component: AdvertisementComponent,
+     children: [ 
+      {path: '', redirectTo: 'index', pathMatch: 'full'}, 
+      {path: 'index', component: AdvertisementIndexComponent},
+      {path: 'create', component: AdvertisementCreateComponent},
+      {path: 'detail/:id', component: AdvertisementDetailComponent},
+    ]
+  },
+  
+  //About
   {path: 'about', component: AboutComponent,
-    //Child routes for advertisements-detail/:id
     children: [ 
       {path: '', redirectTo: 'summary', pathMatch: 'full'}, 
       {path: 'summary', component: AboutSummaryComponent}, 
