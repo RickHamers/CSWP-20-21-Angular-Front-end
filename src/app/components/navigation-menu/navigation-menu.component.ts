@@ -11,7 +11,7 @@ import { Router } from '@angular/router'
 export class NavigationMenuComponent implements OnInit {
 
   userID;
-
+  username;
   isLoggedIn$: Observable<boolean>;
 
   constructor(private authservice: AuthenticationService, private router: Router) { }
@@ -19,8 +19,9 @@ export class NavigationMenuComponent implements OnInit {
   ngOnInit() {
     this.isLoggedIn$ = this.authservice.isLoggedIn;
     this.userID = this.authservice.returnUserID();
+    this.username = this.authservice.returnUsername();
   }
-  
+
   onLogout() {
     this.authservice.logout();
     this.router.navigate(['/login']);
