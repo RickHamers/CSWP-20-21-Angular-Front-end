@@ -1,32 +1,36 @@
 <!-- navigation-menu.component.html -->
 
 <div class="wrapper">
-        <!-- Sidebar Holder -->
-        <nav id="sidebar">
-            <div class="sidebar-header">
-                <h3>Zolderopruiming</h3>
-            </div>
-
-            <ul class="list-unstyled components">
-                <p>Menu</p>
-                <li>
-                    <a routerLink="login">Login</a>
-                </li>     
-                <li>
-                    <a routerLink="advertisement">Home</a>
-                </li>
-                <li>
-                    <a routerLink="not-found">placeholder</a>
-                </li>
-                <li>
-                    <a routerLink="about">About</a>
-                </li>
-            </ul>
-            <ul class="list-unstyled CTAs" *ngIf="isLoggedIn$ | async">
-                <li><a href="javascript:void(0)" (click)="onLogout()" class="logout">Log out</a></li>
-            </ul>
-        </nav>
-
+  <!-- Sidebar Holder -->
+  <nav id="sidebar">
+    <div class="sidebar-header">
+      <h3>Menu</h3>
+    </div>
+    <ul class="list-unstyled components">
+      <p>{{username}}</p>
+      <li>
+        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Account</a>
+        <ul class="collapse list-unstyled" id="pageSubmenu">
+          <li>
+            <a routerLink="login">Login</a>
+          </li>
+          <li>
+            <a routerLink="profile">Profile Placeholder</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a routerLink="advertisement">Advertisements</a>
+      </li>
+      <li>
+        <a routerLink="about">About</a>
+      </li>
+    </ul>
+    <ul class="list-unstyled CTAs" *ngIf="isLoggedIn$ | async">
+      <li><a href="javascript:void(0)" (click)="onLogout()" class="logout">Log out</a></li>
+    </ul>
+  </nav>
+</div>
 
 
 

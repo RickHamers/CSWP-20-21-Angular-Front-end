@@ -1,5 +1,10 @@
 # Changelog
 
+## [RHa] - Version 2.1.0 - 2019-11-15
+### Update navigation menu & enviroments
+* Additions/Changes to the navigation menu
+* Add localhost:3000 adress to non-production environment
+
 ## [RHa] - Version 2.0.1 - 2019-11-15
 ### Generic additions and fixes
 * Add placeholder modals for reply and edit/delete comment functionality
