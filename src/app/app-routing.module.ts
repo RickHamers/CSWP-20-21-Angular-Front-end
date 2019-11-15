@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+
 import { AboutComponent } from './components/about/about.component';
 import { AboutSummaryComponent } from './components/about/about-summary/about-summary.component';
 import { AboutUseCasesComponent } from './components/about/about-use-cases/about-use-cases.component';
 import { AdvertisementComponent } from './components/advertisement/advertisement.component'
+
 import { AdvertisementIndexComponent } from './components/advertisement/advertisement-index/advertisement-index.component';
 import { AdvertisementCreateComponent } from './components/advertisement/advertisement-create/advertisement-create.component';
 import { AdvertisementDetailComponent } from './components/advertisement-detail/advertisement-detail.component';
@@ -39,8 +42,8 @@ const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
 
   // Catch all non-existing paths and show a 404 component
-  {path: 'not-found', component: NotFoundComponent},
-  {path: '**', redirectTo: 'not-found', pathMatch: 'full'}
+  // {path: 'not-found', component: NotFoundComponent},
+  // {path: '**', redirectTo: 'not-found', pathMatch: 'full'}
 ];
 
 @NgModule({
