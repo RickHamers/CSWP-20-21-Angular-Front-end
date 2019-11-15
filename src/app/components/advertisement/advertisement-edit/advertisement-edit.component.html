@@ -1,0 +1,23 @@
+<!-- advertisement-edit.component.html -->
+
+
+    <div class="text-lg-center">
+      <h3 *ngIf="isLoading">Loading...</h3>
+      <h3 *ngIf="!isLoading">Edit advertisement "{{ advertisement.title }}"</h3>
+      <hr class="my-4">
+  </div>
+  <div class="container" *ngIf="!isLoading">
+    <form [formGroup]="editAdvertisementForm" class="form-advertisement" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label>Title:</label>
+        <input title="title" type="text" class="form-control" formControlName="title" required [placeholder]="advertisement.title">
+      </div>
+      <div class="form-group">
+        <label>Content:</label>
+        <textarea rows="5" title="content" type="text" class="form-control" formControlName="content" required [placeholder]="advertisement.content"></textarea>
+      </div>
+      <button type="submit" [disabled]="!editAdvertisementForm.valid" class="btn btn-primary">Update advertisement</button>
+    </form>
+  </div>
+  
+  

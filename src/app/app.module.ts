@@ -16,6 +16,7 @@ import { AdvertisementDetailComponent } from './components/advertisement/adverti
 import { AboutSummaryComponent } from './components/about/about-summary/about-summary.component';
 import { AboutUseCasesComponent } from './components/about/about-use-cases/about-use-cases.component';
 import { AdvertisementComponent } from './components/advertisement/advertisement.component';
+import { AdvertisementEditComponent } from './components/advertisement/advertisement-edit/advertisement-edit.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { AdvertisementComponent } from './components/advertisement/advertisement
     AdvertisementDetailComponent,
     AboutSummaryComponent,
     AboutUseCasesComponent,
-    AdvertisementComponent
+    AdvertisementComponent,
+    AdvertisementEditComponent
   ],
   imports: [
     FormsModule,

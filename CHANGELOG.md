@@ -1,5 +1,12 @@
 # Changelog
 
+## [RHa] - Version 1.9.0 - 2019-11-15
+### Temporary login fix
+* Add edit advertisement component
+* Add edit advertisement routing
+* Add edit advertisement functionality
+* Refactor/Code cleanup
+
 ## [RHa] - Version 1.8.1 - 2019-11-15
 ### Temporary login fix
 * Fix child routing for several components
