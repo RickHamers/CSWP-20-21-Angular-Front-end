@@ -14,6 +14,8 @@ import { AdvertisementCreateComponent } from './components/advertisement/adverti
 import { AdvertisementDetailComponent } from './components/advertisement/advertisement-detail/advertisement-detail.component';
 import { AdvertisementEditComponent } from './components/advertisement/advertisement-edit/advertisement-edit.component';
 
+import { AuthenticationGuardService } from './services/authentication-guard.service'
+
 import {NotFoundComponent} from './components/not-found/not-found.component';
 
 
@@ -23,13 +25,13 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent},
 
   //Advertisement
-  {path: 'advertisement', component: AdvertisementComponent,
+  {path: 'advertisement', component: AdvertisementComponent, canActivate: [AuthenticationGuardService],
      children: [ 
       {path: '', redirectTo: 'index', pathMatch: 'full'}, 
-      {path: 'index', component: AdvertisementIndexComponent},
-      {path: 'create', component: AdvertisementCreateComponent},
-      {path: 'detail/:id/edit', component: AdvertisementEditComponent},
-      {path: 'detail/:id', component: AdvertisementDetailComponent},
+      {path: 'index', component: AdvertisementIndexComponent, canActivate: [AuthenticationGuardService]},
+      {path: 'create', component: AdvertisementCreateComponent, canActivate: [AuthenticationGuardService]},
+      {path: 'detail/:id/edit', component: AdvertisementEditComponent, canActivate: [AuthenticationGuardService]},
+      {path: 'detail/:id', component: AdvertisementDetailComponent, canActivate: [AuthenticationGuardService]},
     
     ]
   },
