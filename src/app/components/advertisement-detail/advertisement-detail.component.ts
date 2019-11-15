@@ -12,14 +12,14 @@ import { AuthenticationService } from '../../services/authentication.service';
 })
 export class AdvertisementDetailComponent implements OnInit, OnDestroy {
 
-  private isLoggedIn$: Observable<boolean>;
-  private loggedInUsername: string;
-  private commentForm: FormGroup;
-  private newComments = [];
-  private advertisement;
+  isLoggedIn$: Observable<boolean>;
+  loggedInUsername: string;
+  advertisement;
   isLoading: boolean = true;
-  isAdvertisementAuthorLoginName: boolean = false;
-  private getAdvertisementSubscription: Subscription;
+  isAdvertisementAuhorLoginName: boolean = false;
+  commentForm: FormGroup;
+  newComments = [];
+  getAdvertisementSubscription: Subscription;
 
   constructor(private activatedRoute: ActivatedRoute, private advertisementService: AdvertisementService, private authService: AuthenticationService, private router: Router) { }
 
@@ -35,7 +35,7 @@ export class AdvertisementDetailComponent implements OnInit, OnDestroy {
             this.advertisement.comments = this.newComments;
             this.loggedInUsername = this.authService.returnUsername();
             if (this.authService.returnUsername() === this.advertisement.username) {
-              this.isAdvertisementAuthorLoginName = true; }
+              this.isAdvertisementAuhorLoginName = true; }
               this.isLoading = false;
           });
       });
@@ -90,6 +90,7 @@ export class AdvertisementDetailComponent implements OnInit, OnDestroy {
         },
         () => {
           console.log('delete advertisement failed');
-        });
+      }
+    );
   }
 }
