@@ -3,9 +3,9 @@
 <div class="row">
     <div class="col-sm-6 col-md-8 col-lg-9">
       <h3>Summary</h3>
-      <p> This application was made for the course 'Clientside web frameworks' at Avans Hogeschool Breda. </p>
+      <p class="lead"> This application was made for the course 'Clientside web frameworks' at Avans Hogeschool Breda. </p>
       <h3>CSWP Angular Front-end</h3>
-      <p>
+      <p class="lead">
         This Front-end serves provides a place for end-users to put up their belongs for sale, akin to Tweakers.net vraag en aanbod & Marktplaats.
         You can create advertisements on which people can comment and bid.
         You can only edit or delete comments or advertisements if they are your own. You can only bid on items they're on other people's advertisements.
@@ -27,34 +27,32 @@
   <h3>Entities</h3>
   <div class="row">
     <div class="col-sm-12 col-md-4">
-      <p class="lead">User</p>
+      <p class="lead">User account</p>
       <ul>
-        <li>Username: string (Unique)</li>
-        <li>Password: string</li>
+        <li class="lead">Username: string (Unique)</li>
+        <li class="lead">Password: string</li>
+        <li class="lead">Profile picture: image</li>
       </ul>
     </div>
     <div class="col-sm-12 col-md-4">
       <p class="lead">Advertisement</p>
       <ul>
-        <li>Title: string</li>
-        <li>Image: image</li>
-        <li>Content: string</li>
-        <li>Author (Username): string</li>
-        <li>Upvote: number</li>
-        <li>Downvote: number</li>
-        <li>Comments: list of comment entities</li>
+        <li class="lead">Title: string</li>
+        <li class="lead">Image: image</li>
+        <li class="lead">Content: string</li>
+        <li class="lead">Author (Username): string</li>
+        <li class="lead">Comments: list of comment entities</li>
       </ul>
     </div>
     <div class="col-sm-12 col-md-4">
       <p class="lead">Comment</p>
       <ul>
-        <li>Content: string</li>
-        <li>Advertisement-ID: number</li>
-        <li>Author (Username): string</li>
-        <li>Upvote: number</li>
-        <li>Downvote: number</li>
-        <li>Sub-comments: List of comment entities</li>
+        <li class="lead">Content: string</li>
+        <li class="lead">Advertisement-ID: number</li>
+        <li class="lead">Author (Username): string</li>
+        <li class="lead">Upvote: number</li>
+        <li class="lead">Downvote: number</li>
+        <li class="lead">Sub-comments: List of comment entities</li>
       </ul>
     </div>
   </div>
-  

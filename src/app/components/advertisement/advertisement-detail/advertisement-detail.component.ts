@@ -15,9 +15,12 @@ export class AdvertisementDetailComponent implements OnInit, OnDestroy {
   isLoggedIn$: Observable<boolean>;
   loggedInUsername: string;
   advertisement;
+  comment;
   isLoading: boolean = true;
   isAdvertisementAuhorLoginName: boolean = false;
   commentForm: FormGroup;
+  replyCommentForm: FormGroup;
+  editCommentForm: FormGroup;
   newComments = [];
   getAdvertisementSubscription: Subscription;
 
@@ -42,6 +45,12 @@ export class AdvertisementDetailComponent implements OnInit, OnDestroy {
 
     this.commentForm = new FormGroup({});
     this.commentForm.addControl('comment', new FormControl(null, [Validators.required]));
+
+    this.replyCommentForm = new FormGroup({});
+    this.commentForm.addControl('comment', new FormControl(null, [Validators.required]));
+
+    this.editCommentForm = new FormGroup({});
+    this.commentForm.addControl('comment', new FormControl(null, [Validators.required]));
   }
 
   ngOnDestroy(): void {
@@ -50,7 +59,7 @@ export class AdvertisementDetailComponent implements OnInit, OnDestroy {
     }
   }
 
-  onSubmit() {
+  onSubmitAdvertisementComment() {
     const comment = this.commentForm.value['comment'];
     this.advertisementService.postCommentOnAdvertisement(comment, this.advertisement._id)
       .subscribe(
@@ -58,6 +67,44 @@ export class AdvertisementDetailComponent implements OnInit, OnDestroy {
           console.log('comment succeeded');
           this.advertisement.comments.push({
             content: comment,
+            username: this.authService.returnUsername(),
+            depth: 0
+          });
+        },
+        () => {
+          console.log('comment failed');
+        }
+      );
+  }
+
+  onSubmitReplyComment() {
+    const commentContent = this.commentForm.value['comment'];
+    const commentId = this.comment._id;
+    this.advertisementService.postCommentOnAdvertisement(commentId, commentContent)
+      .subscribe(
+        () => {
+          console.log('comment succeeded');
+          this.advertisement.comments.push({
+            content: commentContent,
+            username: this.authService.returnUsername(),
+            depth: 0
+          });
+        },
+        () => {
+          console.log('comment failed');
+        }
+      );
+  }
+
+  onSubmitEditComment() {
+    const commentContent = this.commentForm.value['comment'];
+    const commentId = this.comment._id;
+    this.advertisementService.updateComment(commentId, commentContent)
+      .subscribe(
+        () => {
+          console.log('comment succeeded');
+          this.advertisement.comments.push({
+            content: commentContent,
             username: this.authService.returnUsername(),
             depth: 0
           });

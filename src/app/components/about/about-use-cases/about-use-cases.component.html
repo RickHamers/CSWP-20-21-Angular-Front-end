@@ -5,6 +5,7 @@
       <h3>Use Cases</h3>
       <p>The following functionality is available in this application.</p>
       <div>
+        <!-- USE-CASE 1 -->
         <table class="table table-sm table-bordered">
           <tbody>
             <tr class="table-primary">
@@ -43,6 +44,7 @@
         </table>
       </div>
       <div>
+        <!-- USE-CASE 2 -->
         <table class="table table-sm table-bordered">
           <tbody>
             <tr class="table-primary">
@@ -77,6 +79,564 @@
             </tr>
           </tbody>
         </table>
+        <!-- USE-CASE 3 -->
+        <table class="table table-sm table-bordered">
+          <tbody>
+          <tr class="table-primary">
+            <th scope="row" style="width: 16.66%">Name</th>
+            <td><strong>UC-03 Changing account information</strong></td>
+          </tr>
+          <tr>
+            <th scope="row">Description</th>
+            <td>An existing user changes his/her name/password/picture.</td>
+          </tr>
+          <tr>
+            <th scope="row">Actor</th>
+            <td>Regular user</td>
+          </tr>
+          <tr>
+            <th scope="row">Precondition</th>
+            <td>User has a user-account and is logged in</td>
+          </tr>
+          <tr>
+            <th scope="row">Scenario</th>
+            <td>
+              <ol>
+                <li>User navigates to the edit profile page with the sidebar menu.</li>
+                <li>User fills in the username/password fields and/or uploads a picture.</li>
+                <li>The application checks the validity of the input data.</li>
+                <li>Upon acknowledgement of a valid modification attempt, the user will be in and greeted with the profile overview page.</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Postcondition</th>
+            <td>The actor's account information has been changed.</td>
+          </tr>
+          </tbody>
+        </table>
+        <!-- USE-CASE 4 -->
+        <table class="table table-sm table-bordered">
+          <tbody>
+          <tr class="table-primary">
+            <th scope="row" style="width: 16.66%">Name</th>
+            <td><strong>UC-04 Deleting account information</strong></td>
+          </tr>
+          <tr>
+            <th scope="row">Description</th>
+            <td>An existing user deletes his/her account.</td>
+          </tr>
+          <tr>
+            <th scope="row">Actor</th>
+            <td>Regular user</td>
+          </tr>
+          <tr>
+            <th scope="row">Precondition</th>
+            <td>User has a user-account and is logged in</td>
+          </tr>
+          <tr>
+            <th scope="row">Scenario</th>
+            <td>
+              <ol>
+                <li>User navigates to the edit profile page with the sidebar menu.</li>
+                <li>User clicks on the "delete account" button</li>
+                <li>User is greeted with an acknowledgement modal.</li>
+                <li>User clicks on the "delete account" button in the acknowledgement modal</li>
+                <li>Upon acknowledgement of a valid deletion attempt, the user will be in and greeted with the login page.</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Postcondition</th>
+            <td>The actor's account information has been deleted.</td>
+          </tr>
+          </tbody>
+        </table>
+        <!-- USE-CASE 5 -->
+        <table class="table table-sm table-bordered">
+          <tbody>
+          <tr class="table-primary">
+            <th scope="row" style="width: 16.66%">Name</th>
+            <td><strong>UC-05 Viewing an advertisement</strong></td>
+          </tr>
+          <tr>
+            <th scope="row">Description</th>
+            <td>An existing user posts an advertisement.</td>
+          </tr>
+          <tr>
+            <th scope="row">Actor</th>
+            <td>Regular user</td>
+          </tr>
+          <tr>
+            <th scope="row">Precondition</th>
+            <td>User has a user-account and is logged in</td>
+          </tr>
+          <tr>
+            <th scope="row">Scenario</th>
+            <td>
+              <ol>
+                <li>User navigates to the advertisement index page with the sidebar menu.</li>
+                <li>User is greeted with an overview of all advertisements</li>
+                <li>User clicks on the title of an advertisement he/she wants to view.</li>
+                <li>User is greeted with the advertisements detail page.</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Postcondition</th>
+            <td>The actor has a detailed overview of the desired advertisement.</td>
+          </tr>
+          </tbody>
+        </table>
+        <!-- USE-CASE 6 -->
+        <table class="table table-sm table-bordered">
+          <tbody>
+          <tr class="table-primary">
+            <th scope="row" style="width: 16.66%">Name</th>
+            <td><strong>UC-06 Posting an advertisement</strong></td>
+          </tr>
+          <tr>
+            <th scope="row">Description</th>
+            <td>An existing user posts an advertisement.</td>
+          </tr>
+          <tr>
+            <th scope="row">Actor</th>
+            <td>Regular user</td>
+          </tr>
+          <tr>
+            <th scope="row">Precondition</th>
+            <td>User has a user-account and is logged in</td>
+          </tr>
+          <tr>
+            <th scope="row">Scenario</th>
+            <td>
+              <ol>
+                <li>User navigates to the advertisement index page with the sidebar menu.</li>
+                <li>User is greeted with an overview of all advertisements.</li>
+                <li>User clicks on the "create" link in the header.</li>
+                <li>User is greeted with the "create advertisement" page.</li>
+                <li>User fills in a title and description and uploads a picture.</li>
+                <li>User clicks the submit button.</li>
+                <li>The application validates the submitted input data.</li>
+                <li>Upon acknowledgement of a valid submission attempt, the user will be in and greeted with the advertisement index page.</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Postcondition</th>
+            <td>The actor's posted advertisement is viewable on the advertisement index.</td>
+          </tr>
+          </tbody>
+        </table>
+        <!-- USE-CASE 7 -->
+        <table class="table table-sm table-bordered">
+          <tbody>
+          <tr class="table-primary">
+            <th scope="row" style="width: 16.66%">Name</th>
+            <td><strong>UC-07 Updating an advertisement</strong></td>
+          </tr>
+          <tr>
+            <th scope="row">Description</th>
+            <td>An existing user updates an advertisement.</td>
+          </tr>
+          <tr>
+            <th scope="row">Actor</th>
+            <td>Regular user</td>
+          </tr>
+          <tr>
+            <th scope="row">Precondition</th>
+            <td>User has a user-account, is logged in and has posted an advertisement.</td>
+          </tr>
+          <tr>
+            <th scope="row">Scenario</th>
+            <td>
+              <ol>
+                <li>User navigates to the advertisement index page with the sidebar menu.</li>
+                <li>User is greeted with an overview of all advertisements.</li>
+                <li>User clicks on the title link of their advertisement.</li>
+                <li>User is greeted with the "advertisement detail" page.</li>
+                <li>User clicks on the "Edit advertisement" button.</li>
+                <li>User is greeted with the "Edit advertisement" page.</li>
+                <li>User fills in a title and description and uploads a picture.</li>
+                <li>User clicks the submit button.</li>
+                <li>The application validates the submitted input data.</li>
+                <li>Upon acknowledgement of a valid submission attempt, the user will be in and greeted with the advertisement index page.</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Postcondition</th>
+            <td>The actor's updated advertisement is viewable on the advertisement index.</td>
+          </tr>
+          </tbody>
+        </table>
+        <!-- USE-CASE 8 -->
+        <table class="table table-sm table-bordered">
+          <tbody>
+          <tr class="table-primary">
+            <th scope="row" style="width: 16.66%">Name</th>
+            <td><strong>UC-08 Deleting an advertisement</strong></td>
+          </tr>
+          <tr>
+            <th scope="row">Description</th>
+            <td>An existing user deletes an advertisement.</td>
+          </tr>
+          <tr>
+            <th scope="row">Actor</th>
+            <td>Regular user</td>
+          </tr>
+          <tr>
+            <th scope="row">Precondition</th>
+            <td>User has a user-account, is logged in and has posted an advertisement.</td>
+          </tr>
+          <tr>
+            <th scope="row">Scenario</th>
+            <td>
+              <ol>
+                <li>User navigates to the advertisement index page with the sidebar menu.</li>
+                <li>User is greeted with an overview of all advertisements.</li>
+                <li>User clicks on the title link of their advertisement.</li>
+                <li>User is greeted with the "advertisement detail" page.</li>
+                <li>User clicks on the "Delete advertisement" button.</li>
+                <li>User is greeted with an acknowledgement modal.</li>
+                <li>User clicks on the "Delete advertisement" button.</li>
+                <li>The application executes the deletion request.</li>
+                <li>Upon acknowledgement of a valid deletion attempt, the user will be in and greeted with the advertisement index page.</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Postcondition</th>
+            <td>The actor's deleted advertisement is no longer viewable on the advertisement index.</td>
+          </tr>
+          </tbody>
+        </table>
+        <!-- USE-CASE 9 -->
+        <table class="table table-sm table-bordered">
+          <tbody>
+          <tr class="table-primary">
+            <th scope="row" style="width: 16.66%">Name</th>
+            <td><strong>UC-09 Commenting on an advertisement</strong></td>
+          </tr>
+          <tr>
+            <th scope="row">Description</th>
+            <td>An existing user comments on an advertisement.</td>
+          </tr>
+          <tr>
+            <th scope="row">Actor</th>
+            <td>Regular user</td>
+          </tr>
+          <tr>
+            <th scope="row">Precondition</th>
+            <td>User has a user-account and is logged in.</td>
+          </tr>
+          <tr>
+            <th scope="row">Scenario</th>
+            <td>
+              <ol>
+                <li>User navigates to the advertisement index page with the sidebar menu.</li>
+                <li>User is greeted with an overview of all advertisements.</li>
+                <li>User clicks on the title link of an advertisement.</li>
+                <li>User is greeted with the "advertisement detail" page.</li>
+                <li>User clicks in the "comment" field and types a message.</li>
+                <li>User clicks on the "comment" button.</li>
+                <li>The application validates the input data.</li>
+                <li>Upon acknowledgement of a valid submission attempt, the user's view of the advertisement will update.</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Postcondition</th>
+            <td>The actor's comment is viewable on the advertisement.</td>
+          </tr>
+          </tbody>
+        </table>
+        <!-- USE-CASE 10 -->
+        <table class="table table-sm table-bordered">
+          <tbody>
+          <tr class="table-primary">
+            <th scope="row" style="width: 16.66%">Name</th>
+            <td><strong>UC-10 Replying to a comment on an advertisement</strong></td>
+          </tr>
+          <tr>
+            <th scope="row">Description</th>
+            <td>An existing user replies to a comment on an advertisement.</td>
+          </tr>
+          <tr>
+            <th scope="row">Actor</th>
+            <td>Regular user</td>
+          </tr>
+          <tr>
+            <th scope="row">Precondition</th>
+            <td>User has a user-account and is logged in.</td>
+          </tr>
+          <tr>
+            <th scope="row">Scenario</th>
+            <td>
+              <ol>
+                <li>User navigates to the advertisement index page with the sidebar menu.</li>
+                <li>User is greeted with an overview of all advertisements.</li>
+                <li>User clicks on the title link of an advertisement.</li>
+                <li>User is greeted with the "advertisement detail" page.</li>
+                <li>User clicks on the "reply" link in a comment.</li>
+                <li>User is greeted with a "reply" modal.</li>
+                <li>User clicks in the input field and types a message.</li>
+                <li>User clicks on the "comment" button.</li>
+                <li>The application validates the input data.</li>
+                <li>Upon acknowledgement of a valid submission attempt, the user's view of the advertisement will update.</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Postcondition</th>
+            <td>The actor's comment is viewable as a reply on a comment on the advertisement.</td>
+          </tr>
+          </tbody>
+        </table>
+        <!-- USE-CASE 11 -->
+        <table class="table table-sm table-bordered">
+          <tbody>
+          <tr class="table-primary">
+            <th scope="row" style="width: 16.66%">Name</th>
+            <td><strong>UC-11 Updating a comment on an advertisement</strong></td>
+          </tr>
+          <tr>
+            <th scope="row">Description</th>
+            <td>An existing user updates a comment on an advertisement.</td>
+          </tr>
+          <tr>
+            <th scope="row">Actor</th>
+            <td>Regular user</td>
+          </tr>
+          <tr>
+            <th scope="row">Precondition</th>
+            <td>User has a user-account, is logged in and has left a comment.</td>
+          </tr>
+          <tr>
+            <th scope="row">Scenario</th>
+            <td>
+              <ol>
+                <li>User navigates to the advertisement index page with the sidebar menu.</li>
+                <li>User is greeted with an overview of all advertisements.</li>
+                <li>User clicks on the title link of an advertisement.</li>
+                <li>User is greeted with the "advertisement detail" page.</li>
+                <li>User clicks on the "update" link their a comment.</li>
+                <li>User is greeted with a "update comment" modal.</li>
+                <li>User clicks in the input field and types a message.</li>
+                <li>User clicks on the "update" button.</li>
+                <li>The application validates the input data.</li>
+                <li>Upon acknowledgement of a valid submission attempt, the user's view of the advertisement will update.</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Postcondition</th>
+            <td>The actor's updated comment is viewable as on the advertisement.</td>
+          </tr>
+          </tbody>
+        </table>
+        <!-- USE-CASE 13 -->
+        <table class="table table-sm table-bordered">
+          <tbody>
+          <tr class="table-primary">
+            <th scope="row" style="width: 16.66%">Name</th>
+            <td><strong>UC-13 Upvoting a comment on an advertisement</strong></td>
+          </tr>
+          <tr>
+            <th scope="row">Description</th>
+            <td>An existing user upvotes a comment on an advertisement.</td>
+          </tr>
+          <tr>
+            <th scope="row">Actor</th>
+            <td>Regular user</td>
+          </tr>
+          <tr>
+            <th scope="row">Precondition</th>
+            <td>User has a user-account and is logged in.</td>
+          </tr>
+          <tr>
+            <th scope="row">Scenario</th>
+            <td>
+              <ol>
+                <li>User navigates to the advertisement index page with the sidebar menu.</li>
+                <li>User is greeted with an overview of all advertisements.</li>
+                <li>User clicks on the title link of an advertisement.</li>
+                <li>User is greeted with the "advertisement detail" page.</li>
+                <li>User clicks on the "upvote" link in a comment.</li>
+                <li>The application executes the submission request.</li>
+                <li>Upon acknowledgement of a valid deletion attempt, the user's view of the advertisement will update.</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Postcondition</th>
+            <td>The actor's upvote is added to the upvote count of the comment.</td>
+          </tr>
+          </tbody>
+        </table>
+        <!-- USE-CASE 14 -->
+        <table class="table table-sm table-bordered">
+          <tbody>
+          <tr class="table-primary">
+            <th scope="row" style="width: 16.66%">Name</th>
+            <td><strong>UC-14 Downvoting a comment on an advertisement</strong></td>
+          </tr>
+          <tr>
+            <th scope="row">Description</th>
+            <td>An existing user downvotes a comment on an advertisement.</td>
+          </tr>
+          <tr>
+            <th scope="row">Actor</th>
+            <td>Regular user</td>
+          </tr>
+          <tr>
+            <th scope="row">Precondition</th>
+            <td>User has a user-account and is logged in.</td>
+          </tr>
+          <tr>
+            <th scope="row">Scenario</th>
+            <td>
+              <ol>
+                <li>User navigates to the advertisement index page with the sidebar menu.</li>
+                <li>User is greeted with an overview of all advertisements.</li>
+                <li>User clicks on the title link of an advertisement.</li>
+                <li>User is greeted with the "advertisement detail" page.</li>
+                <li>User clicks on the "downvote" link in a comment.</li>
+                <li>The application executes the submission request.</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Postcondition</th>
+            <td>The actor's downvote is added to the downvote count of the comment.</td>
+          </tr>
+          </tbody>
+        </table>
+        <!-- USE-CASE 12 -->
+        <table class="table table-sm table-bordered">
+          <tbody>
+          <tr class="table-primary">
+            <th scope="row" style="width: 16.66%">Name</th>
+            <td><strong>UC-12 Deleting a comment on an advertisement</strong></td>
+          </tr>
+          <tr>
+            <th scope="row">Description</th>
+            <td>An existing user deletes a comment on an advertisement.</td>
+          </tr>
+          <tr>
+            <th scope="row">Actor</th>
+            <td>Regular user</td>
+          </tr>
+          <tr>
+            <th scope="row">Precondition</th>
+            <td>User has a user-account, is logged in and has left a comment.</td>
+          </tr>
+          <tr>
+            <th scope="row">Scenario</th>
+            <td>
+              <ol>
+                <li>User navigates to the advertisement index page with the sidebar menu.</li>
+                <li>User is greeted with an overview of all advertisements.</li>
+                <li>User clicks on the title link of an advertisement.</li>
+                <li>User is greeted with the "advertisement detail" page.</li>
+                <li>User clicks on the "delete" link their a comment.</li>
+                <li>User is greeted with an acknowledgement modal.</li>
+                <li>User clicks on the "delete comment" button in the modal.</li>
+                <li>The application executes the deletion request.</li>
+                <li>Upon acknowledgement of a valid deletion attempt, the user's view of the advertisement will update.</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Postcondition</th>
+            <td>The actor's updated comment is no longer viewable as on the advertisement.</td>
+          </tr>
+          </tbody>
+        </table>
+        <!-- USE-CASE 15 -->
+        <table class="table table-sm table-bordered">
+          <tbody>
+          <tr class="table-primary">
+            <th scope="row" style="width: 16.66%">Name</th>
+            <td><strong>UC-15 Bidding on an advertisement</strong></td>
+          </tr>
+          <tr>
+            <th scope="row">Description</th>
+            <td>An existing user places a bid on an advertisement.</td>
+          </tr>
+          <tr>
+            <th scope="row">Actor</th>
+            <td>Regular user</td>
+          </tr>
+          <tr>
+            <th scope="row">Precondition</th>
+            <td>User has a user-account and is logged in.</td>
+          </tr>
+          <tr>
+            <th scope="row">Scenario</th>
+            <td>
+              <ol>
+                <li>User navigates to the advertisement index page with the sidebar menu.</li>
+                <li>User is greeted with an overview of all advertisements.</li>
+                <li>User clicks on the title link of an advertisement.</li>
+                <li>User is greeted with the "advertisement detail" page.</li>
+                <li>User clicks on the "bid" button on the advertisement.</li>
+                <li>User is greeted with a "Place bid" modal.</li>
+                <li>User inputs an amount into the input field in the modal</li>
+                <li>User clicks on the "place bid" button in the modal.</li>
+                <li>The application validates the submission request.</li>
+                <li>Upon acknowledgement of a valid submission attempt, the user's view of the advertisement will update.</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Postcondition</th>
+            <td>The actor's bid is viewable in the bidding list on the advertisement.</td>
+          </tr>
+          </tbody>
+        </table>
+        <!-- USE-CASE 16 -->
+        <table class="table table-sm table-bordered">
+          <tbody>
+          <tr class="table-primary">
+            <th scope="row" style="width: 16.66%">Name</th>
+            <td><strong>UC-16 Removing a bid from an advertisement</strong></td>
+          </tr>
+          <tr>
+            <th scope="row">Description</th>
+            <td>An existing user deletes a bid from an advertisement.</td>
+          </tr>
+          <tr>
+            <th scope="row">Actor</th>
+            <td>Regular user</td>
+          </tr>
+          <tr>
+            <th scope="row">Precondition</th>
+            <td>User has a user-account, is logged in and has placed a bid on an advertisement.</td>
+          </tr>
+          <tr>
+            <th scope="row">Scenario</th>
+            <td>
+              <ol>
+                <li>User navigates to the advertisement index page with the sidebar menu.</li>
+                <li>User is greeted with an overview of all advertisements.</li>
+                <li>User clicks on the title link of an advertisement.</li>
+                <li>User is greeted with the "advertisement detail" page.</li>
+                <li>User clicks on the "cross" link next to their bid on the advertisement.</li>
+                <li>User is greeted with an acknowledgement modal.</li>
+                <li>User clicks on the "delete bid" button in the modal.</li>
+                <li>The application validates the deletion request.</li>
+                <li>Upon acknowledgement of a valid deletion attempt, the user's view of the advertisement will update.</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Postcondition</th>
+            <td>The actor's bid is no longer viewable in the bidding list on the advertisement.</td>
+          </tr>
+          </tbody>
+        </table>
       </div>
     </div>
+</div>
 

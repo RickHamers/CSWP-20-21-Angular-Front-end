@@ -1,5 +1,12 @@
 # Changelog
 
+## [RHa] - Version 2.0.1 - 2019-11-15
+### Generic additions and fixes
+* Add placeholder modals for reply and edit/delete comment functionality
+* Add preparations for reply and edit/delete comment functionality
+* Rectify errors in about/summary page
+* Add use-cases to the about/use-cases page
+
 ## [RHa] - Version 2.0.0 - 2019-11-15
 ### Add authentication guard
 * Add authentication guard service
