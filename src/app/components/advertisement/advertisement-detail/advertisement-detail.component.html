@@ -1,41 +1,100 @@
 <!-- advertisement-detail.component -->
 
-    <div class="text-lg-center">
-      <h3 *ngIf="isLoading">Loading...</h3>
-      <h3 *ngIf="!isLoading">{{advertisement.title}}</h3>
-      <span *ngIf="isAdvertisementAuhorLoginName">
+<div class="text-lg-center">
+  <h3 *ngIf="isLoading">Loading...</h3>
+  <h3 *ngIf="!isLoading">{{advertisement.title}}</h3>
+  <span *ngIf="isAdvertisementAuhorLoginName">
         <div class="btn-group">
           <button class="btn btn-danger" (click)="onDelete()">Delete advertisement</button>
-          <button class="btn btn-dark" routerLink="/advertisement/detail/{{advertisement._id}}/edit">Edit advertisement</button>
+          <button class="btn btn-dark"
+                  routerLink="/advertisement/detail/{{advertisement._id}}/edit">Edit advertisement</button>
         </div>
       </span>
-      <hr class="my-4">
-    </div>
-    <div class="container" *ngIf="!isLoading">
-      <p>{{advertisement.content}}</p>
-      <hr class="my-4">
-      <small><p>Author: {{advertisement.username}}</p></small>
-      <hr class="my-4">
-      <div class="col">
-        <div class="row" style="margin-bottom: 20px;border: 1px lightgray solid; height: 130px" [ngStyle]="{'margin-left': (comment.depth * 2) + '%', 'width': (100-(comment.depth * 2)) + '%'}" *ngFor="let comment of advertisement.comments">
-          <div>
-            <div style="margin: 7pt">
-              <p class="lead">{{ comment.username }}</p>
-              <p>{{ comment.content }}</p>
-              <span style="display: inline" *ngIf="(isLoggedIn$ | async)">
-                  <a routerLink="/advertisement-comment/{{comment._id}}">reply</a>
+  <hr class="my-4">
+</div>
+<div class="container" *ngIf="!isLoading">
+  <p>{{advertisement.content}}</p>
+  <hr class="my-4">
+  <small><p>Author: {{advertisement.username}}</p></small>
+  <hr class="my-4">
+  <div class="col">
+    <div class="row" style="margin-bottom: 20px;border: 1px lightgray solid; height: 130px"
+         [ngStyle]="{'margin-left': (comment.depth * 2) + '%', 'width': (100-(comment.depth * 2)) + '%'}"
+         *ngFor="let comment of advertisement.comments">
+      <div>
+        <div style="margin: 7pt">
+          <p class="lead">{{ comment.username }}</p>
+          <p>{{ comment.content }}</p>
+          <span style="display: inline" *ngIf="(isLoggedIn$ | async)">
+                  <a type="link" href="event.preventDefault()" data-toggle="modal" data-target="#replyModal">Reply</a>
                 <span>  |  </span>
-                    <a *ngIf="comment.username === loggedInUsername && comment.content !== '[deleted]'" routerLink="/updateComment/{{comment._id}}">update/delete</a>
+                    <a *ngIf="comment.username === loggedInUsername && comment.content !== '[deleted]'"
+                       type="link" href="event.preventDefault()" data-toggle="modal" data-target="#updateModal">Update/Delete</a>
               </span>
+        </div>
+      </div>
+
+      <!-- REPLY COMMENT MODAL -->
+      <div class="modal fade" id="replyModal" tabindex="-1" role="dialog" aria-labelledby="replyModal"
+           aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="replyModalLongTitle">Reply to comment</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <h3>To be added</h3>
+<!--              <form [formGroup]="replyCommentForm" (ngSubmit)="onSubmitReplyComment()">-->
+<!--                <textarea name="" id="" cols="63" rows="3"></textarea>-->
+<!--                <button type="submit" [disabled]="!replyCommentForm.valid" class="btn btn-primary">Comment</button>-->
+<!--              </form>-->
+            </div>
+            <div class="modal-footer">
+              <button type="submit" [disabled]="!editCommentForm.valid" class="btn btn-primary">Submit</button>
             </div>
           </div>
         </div>
       </div>
-      <hr class="my-4">
-      <form [formGroup]="commentForm" (ngSubmit)="onSubmit()">
-        <div class="form-group">
-        <textarea formControlName="comment" cols="100" rows="3"></textarea>
+
+      <!-- UPDATE/DELETE COMMENT MODAL -->
+      <div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="updateModal"
+           aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="updateModalLongTitle">Edit comment</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <h3>To be added</h3>
+<!--              <form [formGroup]="editCommentForm" (ngSubmit)="onSubmitEditComment()">-->
+<!--                <textarea name="" id="sd" cols="63" rows="3"></textarea>-->
+<!--                <button type="submit" [disabled]="!editCommentForm.valid" class="btn btn-primary">Submit</button>-->
+<!--              </form>-->
+            </div>
+            <div class="modal-footer">
+              <button type="submit" [disabled]="!editCommentForm.valid" class="btn btn-primary">Submit</button>
+            </div>
+          </div>
         </div>
-        <button type="submit" [disabled]="!commentForm.valid" class="btn btn-primary">Comment</button>
-      </form>
+      </div>
     </div>
+  </div>
+
+  <hr class="my-4">
+  <form [formGroup]="commentForm" (ngSubmit)="onSubmitAdvertisementComment()">
+
+    <div class="form-group">
+      <textarea formControlName="comment" cols="100" rows="3"></textarea>
+    </div>
+    <button type="submit" [disabled]="!commentForm.valid" class="btn btn-primary">Comment</button>
+  </form>
+</div>
+
+
+
