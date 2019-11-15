@@ -11,7 +11,7 @@ import { AdvertisementComponent } from './components/advertisement/advertisement
 
 import { AdvertisementIndexComponent } from './components/advertisement/advertisement-index/advertisement-index.component';
 import { AdvertisementCreateComponent } from './components/advertisement/advertisement-create/advertisement-create.component';
-import { AdvertisementDetailComponent } from './components/advertisement-detail/advertisement-detail.component';
+import { AdvertisementDetailComponent } from './components/advertisement/advertisement-detail/advertisement-detail.component';
 import {NotFoundComponent} from './components/not-found/not-found.component';
 
 const routes: Routes = [

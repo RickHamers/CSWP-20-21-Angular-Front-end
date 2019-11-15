@@ -1,12 +1,12 @@
 <!-- advertisement-detail.component -->
 
     <div class="text-lg-center">
-      <h1 *ngIf="isLoading" class="display-4">Loading...</h1>
-      <h1 *ngIf="!isLoading" class="display-4">{{advertisement.title}}</h1>
+      <h3 *ngIf="isLoading">Loading...</h3>
+      <h3 *ngIf="!isLoading">{{advertisement.title}}</h3>
       <span *ngIf="isAdvertisementAuhorLoginName">
         <div class="btn-group">
           <button class="btn btn-danger" (click)="onDelete()">Delete advertisement</button>
-          <button class="btn btn-dark" [routerLink]="['/advertisement/detail', advertisement._id]">Edit advertisement</button>
+          <button class="btn btn-dark" routerLink="/advertisement-edit/{{advertisement._id}}">Edit advertisement</button>
         </div>
       </span>
       <hr class="my-4">
