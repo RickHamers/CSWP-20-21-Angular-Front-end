@@ -12,4 +12,5 @@ export class AdvertisementComponent implements OnInit {
   ngOnInit() {
   }
 
+
 }

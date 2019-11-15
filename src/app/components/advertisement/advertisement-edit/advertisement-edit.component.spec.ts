@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { FormGroup } from '@angular/forms';
 import { AdvertisementEditComponent } from './advertisement-edit.component';
 
 describe('AdvertisementEditComponent', () => {
@@ -8,6 +8,9 @@ describe('AdvertisementEditComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+        FormGroup
+      ],
       declarations: [ AdvertisementEditComponent ]
     })
     .compileComponents();
