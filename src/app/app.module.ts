@@ -10,11 +10,12 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { LoginComponent } from './components/login/login.component';
 import { NavigationMenuComponent } from './components/navigation-menu/navigation-menu.component';
 import { RegisterComponent } from './components/register/register.component';
-import { AdvertisementIndexComponent } from './components/advertisement-index/advertisement-index.component';
-import { AdvertisementCreateComponent } from './components/advertisement-create/advertisement-create.component';
-import { AdvertisementDetailComponent } from './components/advertisement-detail/advertisement-detail.component';
+import { AdvertisementIndexComponent } from './components/advertisement/advertisement-index/advertisement-index.component';
+import { AdvertisementCreateComponent } from './components/advertisement/advertisement-create/advertisement-create.component';
+import { AdvertisementDetailComponent } from './components/advertisement/advertisement-detail/advertisement-detail.component';
 import { AboutSummaryComponent } from './components/about/about-summary/about-summary.component';
 import { AboutUseCasesComponent } from './components/about/about-use-cases/about-use-cases.component';
+import { AdvertisementComponent } from './components/advertisement/advertisement.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { AboutUseCasesComponent } from './components/about/about-use-cases/about
     AdvertisementCreateComponent,
     AdvertisementDetailComponent,
     AboutSummaryComponent,
-    AboutUseCasesComponent
+    AboutUseCasesComponent,
+    AdvertisementComponent
   ],
   imports: [
     FormsModule,

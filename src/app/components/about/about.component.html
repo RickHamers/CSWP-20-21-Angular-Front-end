@@ -1,15 +1,14 @@
 <!-- about.component.html -->
 
-<!-- about.component.html -->
-
 <div class="text-lg-center">
   <h1 class="display-4">About</h1>
+  <p class="lead">
+    <a [routerLink]="['./summary']">Summary</a> |
+    <a [routerLink]="['./use-cases']">Use cases</a>
+  </p>
   <hr class="my-4">
 </div>
-<p class="lead">
-  <a [routerLink]="['./summary']">Summary</a> |
-  <a [routerLink]="['./use-cases']">Use cases</a>
-</p>
+
 
 <router-outlet></router-outlet>
       

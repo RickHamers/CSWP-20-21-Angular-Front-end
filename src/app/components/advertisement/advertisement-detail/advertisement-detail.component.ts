@@ -1,9 +1,9 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import { AdvertisementService } from '../../services/advertisement.service';
+import { AdvertisementService } from '../../../services/advertisement.service';
 import {Observable, Subscription} from 'rxjs';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import { AuthenticationService } from '../../services/authentication.service';
+import { AuthenticationService } from '../../../services/authentication.service';
 
 @Component({
   selector: 'app-advertisement-detail',
@@ -86,7 +86,7 @@ export class AdvertisementDetailComponent implements OnInit, OnDestroy {
       .subscribe(
         () => {
           console.log('delete advertisement succeeded');
-          this.router.navigate(['/advertisement-index']);
+          this.router.navigate(['/advertisement/index']);
         },
         () => {
           console.log('delete advertisement failed');

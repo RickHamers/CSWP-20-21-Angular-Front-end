@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AdvertisementService } from '../../services/advertisement.service';
+import { AdvertisementService } from '../../../services/advertisement.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { AuthenticationService } from '../../services/authentication.service';
+import { AuthenticationService } from '../../../services/authentication.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -28,7 +28,7 @@ export class AdvertisementCreateComponent implements OnInit {
       .subscribe(
         () => {
           console.log('post advertisement succeeded');
-          this.router.navigate(['/advertisement-index']);
+          this.router.navigate(['/advertisement/index']);
         },
         () => {
           console.log('post advertisement failed');
