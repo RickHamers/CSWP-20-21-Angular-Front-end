@@ -1,5 +1,10 @@
 # Changelog
 
+## [RHa] - Version 2.0.0 - 2019-11-15
+### Add authentication guard
+* Add authentication guard service
+* Add authentication gatekeeping to advertisement functionality routing
+
 ## [RHa] - Version 1.9.1 - 2019-11-15
 ### Fix build error
 * Fix Heroku build
