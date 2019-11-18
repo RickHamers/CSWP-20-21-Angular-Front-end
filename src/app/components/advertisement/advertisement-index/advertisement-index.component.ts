@@ -15,5 +15,4 @@ export class AdvertisementIndexComponent implements OnInit {
   ngOnInit() {
     this.advertisements$ = this.advertisementService.getAllAdvertisements();
   }
-
 }

@@ -17,6 +17,9 @@ import { AboutSummaryComponent } from './components/about/about-summary/about-su
 import { AboutUseCasesComponent } from './components/about/about-use-cases/about-use-cases.component';
 import { AdvertisementComponent } from './components/advertisement/advertisement.component';
 import { AdvertisementEditComponent } from './components/advertisement/advertisement-edit/advertisement-edit.component';
+import { AccountComponent } from './components/account/account.component';
+import { ProfileComponent } from './components/account/profile/profile.component';
+import { ChangePasswordComponent } from './components/account/change-password/change-password.component';
 
 
 @NgModule({
@@ -33,7 +36,10 @@ import { AdvertisementEditComponent } from './components/advertisement/advertise
     AboutSummaryComponent,
     AboutUseCasesComponent,
     AdvertisementComponent,
-    AdvertisementEditComponent
+    AdvertisementEditComponent,
+    AccountComponent,
+    ProfileComponent,
+    ChangePasswordComponent
   ],
   imports: [
     FormsModule,

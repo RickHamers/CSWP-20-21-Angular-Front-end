@@ -78,6 +78,17 @@ export class AuthenticationService {
     );
   }
 
+  updatePassword(username: string, oldPassword: string, newPassword: string) {
+    console.log('Update password function');
+    return this.httpclient.put(`${environment.apiUrl}/api/change-password`, {
+      username: username,
+      password: oldPassword,
+      newPassword: newPassword
+    },
+      {headers: this.createHeader()}).pipe(
+      );
+  }
+
   public logout() {
     localStorage.removeItem('x-access-token');
     localStorage.removeItem('expiresAt');

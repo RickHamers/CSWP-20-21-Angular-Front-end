@@ -46,14 +46,10 @@
               </button>
             </div>
             <div class="modal-body">
-              <h3>To be added</h3>
-<!--              <form [formGroup]="replyCommentForm" (ngSubmit)="onSubmitReplyComment()">-->
-<!--                <textarea name="" id="" cols="63" rows="3"></textarea>-->
-<!--                <button type="submit" [disabled]="!replyCommentForm.valid" class="btn btn-primary">Comment</button>-->
-<!--              </form>-->
-            </div>
-            <div class="modal-footer">
-              <button type="submit" [disabled]="!editCommentForm.valid" class="btn btn-primary">Submit</button>
+              <form [formGroup]="replyCommentForm" (ngSubmit)="onSubmitReplyComment(advertisement._id, comment._id)">
+                <textarea formControlName="comment" id="" cols="63" rows="3"></textarea>
+                <button type="submit" [disabled]="!replyCommentForm.valid" class="btn btn-primary">Comment</button>
+              </form>
             </div>
           </div>
         </div>
@@ -71,14 +67,10 @@
               </button>
             </div>
             <div class="modal-body">
-              <h3>To be added</h3>
-<!--              <form [formGroup]="editCommentForm" (ngSubmit)="onSubmitEditComment()">-->
-<!--                <textarea name="" id="sd" cols="63" rows="3"></textarea>-->
-<!--                <button type="submit" [disabled]="!editCommentForm.valid" class="btn btn-primary">Submit</button>-->
-<!--              </form>-->
-            </div>
-            <div class="modal-footer">
-              <button type="submit" [disabled]="!editCommentForm.valid" class="btn btn-primary">Submit</button>
+              <form [formGroup]="updateCommentForm" (ngSubmit)="onSubmitUpdateComment(comment._id)">
+                <textarea formControlName="comment" id="sd" cols="63" rows="3"></textarea>
+                <button type="submit" [disabled]="!updateCommentForm.valid" class="btn btn-primary">Update</button>
+              </form>
             </div>
           </div>
         </div>
