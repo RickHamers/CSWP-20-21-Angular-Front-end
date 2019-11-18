@@ -1,5 +1,10 @@
 # Changelog
 
+## [RHa] - Version 2.2.0 - 2019-11-18
+### Initial edit comment & reply
+* Add initial edit comment functionality (to be completed)
+* Add initial reply to comment functionality (to be completed)
+
 ## [RHa] - Version 2.1.3 - 2019-11-18
 ### Fix advertisement.component routing
 * Rectify incorrect routing tags
