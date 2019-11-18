@@ -3,7 +3,7 @@
   <div class="container" style="width: 100%">
     <div class="row" style="margin: 1pt; width: 100%">
       <div style="margin: 1pt; border: 1px lightgray solid" class="col-12" *ngFor="let advertisement of (advertisements$ | async)">
-        <h3><a href="javascript:void(0)" routerLink="['/advertisement/detail', advertisement._id]">{{advertisement.title}}</a></h3>
+        <h3><a href="javascript:void(0)" [routerLink]="['/advertisement/detail', advertisement._id]">{{advertisement.title}}</a></h3>
         <p class="lead">{{advertisement.content.substring(0,150)}}</p>
         <small>
           <p>Author: {{advertisement.username}}</p>
