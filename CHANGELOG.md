@@ -1,5 +1,12 @@
 # Changelog
 
+## [RHa] - Version 2.3.0 - 2019-11-18
+### Add account functionality
+* Add change password functionality
+* Add profile placeholder
+* Add accout component with child-routing to profile & change password
+* Update navigation menu to reflect the new implementations
+
 ## [RHa] - Version 2.2.0 - 2019-11-18
 ### Initial edit comment & reply
 * Add initial edit comment functionality (to be completed)

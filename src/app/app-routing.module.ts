@@ -1,3 +1,6 @@
+import { ChangePasswordComponent } from './components/account/change-password/change-password.component';
+import { ProfileComponent } from './components/account/profile/profile.component';
+import { AccountComponent } from './components/account/account.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -23,6 +26,14 @@ const routes: Routes = [
   //Authentication
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
+
+  //Account
+  {path: 'account', component: AccountComponent,
+  children: [
+    {path: '', redirectTo: 'account', pathMatch: 'full'},
+    {path: 'profile', component: ProfileComponent},
+    {path: 'change-password', component: ChangePasswordComponent}
+  ]},
 
   //Advertisement
   {path: 'advertisement', component: AdvertisementComponent, canActivate: [AuthenticationGuardService],

@@ -1,0 +1,15 @@
+<!-- account.component.html -->
+
+<div class="jummbotron">
+    <div class="text-lg-center">
+        <h1 class="display-4">Welcome, {{ username }}</h1>
+        <p class="lead">
+          <a [routerLink]="['/account/profile']">Profile</a> |
+          <a [routerLink]="['/account/change-password']">Change password</a>
+        </p>
+        <hr class="my-4">
+      </div>
+    </div>
+    
+    
+    <router-outlet></router-outlet>
