@@ -1,5 +1,9 @@
 # Changelog
 
+## [RHa] - Version 2.1.2 - 2019-11-15
+### Fix 7 tests
+* Rectify incorrect routing tags
+
 ## [RHa] - Version 2.1.1 - 2019-11-15
 ### Fix 7 tests
 * Fix 7 failing test
