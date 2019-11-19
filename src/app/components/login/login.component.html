@@ -21,6 +21,6 @@
 
         <!-- ALERTS -->
         <p *ngIf="showAlert" class="alert">
-            <ngb-alert [type]="alert.type" (close)="close(alert)">{{ alert.message }}</ngb-alert>
+            <ngb-alert [type]="alert.type" (close)="closeAlert()">{{ alert.message }}</ngb-alert>
         </p>
         
