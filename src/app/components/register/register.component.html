@@ -4,6 +4,7 @@
         <h1 class="display-4">Register</h1>
         <hr class="my-4">
       </div>
+      <div class="container">
       <form [formGroup]="registerForm" class="form-register" (ngSubmit)="onSubmit()">
         <div class="form-group">
           <label>Username:</label>
@@ -15,3 +16,4 @@
         </div>
         <button type="submit" [disabled]="!registerForm.valid" class="btn btn-primary">Create account</button>
       </form>
+      </div>
