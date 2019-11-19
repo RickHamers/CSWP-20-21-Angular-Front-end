@@ -9,6 +9,9 @@
       <label>Content:</label>
       <textarea rows="5" title="content" type="text" class="form-control" formControlName="content" required></textarea>
     </div>
-    <button type="submit" [disabled]="!advertisementForm.valid" class="btn btn-primary">Create advertisement</button>
+    <button type="submit" [disabled]="!advertisementForm.valid" class="btn btn-primary">
+        <span *ngIf="isLoading" class="spinner-grow spinner-grow-sm"></span>
+      Create advertisement
+    </button>
   </form>
   
