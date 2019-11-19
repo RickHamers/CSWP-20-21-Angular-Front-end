@@ -19,3 +19,8 @@
           <small><a style="margin-left: 10px" routerLink="/register">Don't have an account yet? Click here!</a></small>
         </form>
 
+        <!-- ALERTS -->
+        <p *ngIf="showAlert" class="alert">
+            <ngb-alert [type]="alert.type" (close)="close(alert)">{{ alert.message }}</ngb-alert>
+        </p>
+        

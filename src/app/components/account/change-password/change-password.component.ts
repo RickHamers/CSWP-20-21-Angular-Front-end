@@ -13,6 +13,11 @@ export class ChangePasswordComponent implements OnInit {
   userId: string;
   username: string;
   passwordForm: FormGroup;
+  showAlert: boolean = false;
+  alert = {
+    type: "",
+    message: ""
+  }
 
   constructor(private authService: AuthenticationService, private router: Router) { }
 
@@ -32,10 +37,20 @@ export class ChangePasswordComponent implements OnInit {
     this.authService.updatePassword(username, oldPassword, newPassword)
       .subscribe(
         () => {
+          this.alert = {
+            type: "succes",
+            message: "Password change succesful!"
+          }
+          this.showAlert = true;
           console.log('password change succeeded');
           this.router.navigate(['/account/profile']);
         },
         () => {
+          this.alert = {
+            type: "danger",
+            message: "Password change failed"
+          }
+          this.showAlert = true;
           console.log('password change failed');
         }
       );
