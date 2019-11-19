@@ -6,6 +6,21 @@
       <h3 *ngIf="!isLoading">Edit advertisement "{{ advertisement.title }}"</h3>
       <hr class="my-4">
   </div>
+
+<!-- LOADING -->
+<div class="loading-dots" *ngIf="isLoading">
+    <div class="spinner-grow" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <div class="spinner-grow" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <div class="spinner-grow" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+</div>
+
+<!-- AFTER LOADING -->
   <div class="container" *ngIf="!isLoading">
     <form [formGroup]="editAdvertisementForm" class="form-advertisement" (ngSubmit)="onSubmit()">
       <div class="form-group">

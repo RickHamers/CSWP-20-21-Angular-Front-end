@@ -24,7 +24,12 @@ export class AdvertisementDetailComponent implements OnInit, OnDestroy {
   newComments = [];
   getAdvertisementSubscription: Subscription;
 
-  constructor(private activatedRoute: ActivatedRoute, private advertisementService: AdvertisementService, private authService: AuthenticationService, private router: Router) { }
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private advertisementService: AdvertisementService, 
+    private authService: AuthenticationService,
+    private router: Router
+    ) { }
 
   ngOnInit() {
     this.isLoggedIn$ = this.authService.isLoggedIn;
@@ -52,7 +57,7 @@ export class AdvertisementDetailComponent implements OnInit, OnDestroy {
     this.updateCommentForm = new FormGroup({});
     this.updateCommentForm.addControl('comment', new FormControl(null, [Validators.required]));
   }
-
+  
   ngOnDestroy(): void {
     if (this.getAdvertisementSubscription !== undefined) {
       this.getAdvertisementSubscription.unsubscribe();
@@ -83,6 +88,7 @@ export class AdvertisementDetailComponent implements OnInit, OnDestroy {
       .subscribe(
         () => {
           console.log('comment succeeded');
+          this.advertisementService.getAdvertisement(advertisementId);
         },
         () => {
           console.log('comment failed');
@@ -96,6 +102,7 @@ export class AdvertisementDetailComponent implements OnInit, OnDestroy {
       .subscribe(
         () => {
           console.log('comment succeeded');
+          this.advertisementService.getAdvertisement(this.advertisement._id)
         },
         () => {
           console.log('comment failed');

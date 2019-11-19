@@ -1,5 +1,10 @@
 # Changelog
 
+## [RHa] - Version 2.3.1 - 2019-11-19
+### Fix reply/update comments
+* Rectify issue of not being able to reply to comments
+* Add small UI/logic tweaks/cleanup/fixes
+
 ## [RHa] - Version 2.3.0 - 2019-11-18
 ### Add account functionality
 * Add change password functionality
