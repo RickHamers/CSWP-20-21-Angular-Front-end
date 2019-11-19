@@ -10,6 +10,7 @@ import { AuthenticationService } from '../../services/authentication.service'
 })
 export class RegisterComponent implements OnInit {
 
+  isLoading: boolean = false;
   registerForm: FormGroup;
 
   constructor(private authservice: AuthenticationService, private router: Router) { }
@@ -21,15 +22,18 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit() {
+    this.isLoading = true;
     const username = this.registerForm.value['username'];
     const password = this.registerForm.value['password'];
     this.authservice.register(username, password)
       .subscribe(
         () => {
+          this.isLoading = false;
           console.log('register succeeded');
           this.router.navigate(['/login']);
         },
         () => {
+          this.isLoading = false;
           console.log('register failed');
         }
       );

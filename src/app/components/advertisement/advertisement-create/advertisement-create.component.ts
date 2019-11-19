@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 })
 export class AdvertisementCreateComponent implements OnInit {
 
+  isLoading: boolean = false;
   advertisementForm: FormGroup;
 
   constructor(private advertisementService: AdvertisementService, private authService: AuthenticationService, private router: Router) { }
@@ -22,15 +23,18 @@ export class AdvertisementCreateComponent implements OnInit {
   }
 
   onSubmit() {
+    this.isLoading = true;
     const title = this.advertisementForm.value['title'];
     const content = this.advertisementForm.value['content'];
     this.advertisementService.postAdvertisement(title, content)
       .subscribe(
         () => {
+          this.isLoading = false;
           console.log('post advertisement succeeded');
           this.router.navigate(['/advertisement/index']);
         },
         () => {
+          this.isLoading = false;
           console.log('post advertisement failed');
         }
       );
