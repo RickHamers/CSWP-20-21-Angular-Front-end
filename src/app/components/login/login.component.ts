@@ -49,4 +49,8 @@ export class LoginComponent implements OnInit {
         }
       );
   }
+  
+  closeAlert() {
+    this.showAlert = false;
+  }
 }

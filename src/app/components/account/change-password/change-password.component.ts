@@ -55,4 +55,8 @@ export class ChangePasswordComponent implements OnInit {
         }
       );
   }
+
+  closeAlert() {
+    this.showAlert = false;
+  }
 }
