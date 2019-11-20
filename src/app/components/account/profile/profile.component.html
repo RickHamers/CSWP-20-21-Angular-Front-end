@@ -1,2 +1,11 @@
 <!-- profile.component.html -->
-<h1 class="display-4">Profile Placeholder</h1>
+<h1 class="display-4">Profile</h1>
+
+<p class="lead">Profile picture:</p>
+<input type="file" name="photo" ng2FileSelect [uploader]="uploader" />
+
+<button type="button" class="btn btn-success btn-s" 
+  (click)="uploader.uploadAll()" 
+  [disabled]="!uploader.getNotUploadedItems().length" >
+      Upload an Image
+</button>
