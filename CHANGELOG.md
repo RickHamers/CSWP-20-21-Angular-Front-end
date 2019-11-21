@@ -1,5 +1,11 @@
 # Changelog
 
+## [RHa] - Version 2.3.2 - 2019-11-19
+### Fix reply/update comments
+* Rectify issue of incorrect comment retrieval
+* Fix component refresh after update/reply
+* Add initial bidding list
+
 ## [RHa] - Version 2.3.1 - 2019-11-19
 ### Fix reply/update comments
 * Rectify issue of not being able to reply to comments

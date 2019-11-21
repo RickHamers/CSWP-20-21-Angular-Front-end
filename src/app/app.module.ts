@@ -20,7 +20,7 @@ import { AdvertisementEditComponent } from './components/advertisement/advertise
 import { AccountComponent } from './components/account/account.component';
 import { ProfileComponent } from './components/account/profile/profile.component';
 import { ChangePasswordComponent } from './components/account/change-password/change-password.component';
-import { FileSelectDirective } from 'ng2-file-upload'
+import { FileUploadModule } from 'ng2-file-upload'
 
 
 @NgModule({
@@ -41,7 +41,7 @@ import { FileSelectDirective } from 'ng2-file-upload'
     AccountComponent,
     ProfileComponent,
     ChangePasswordComponent,
-    FileSelectDirective
+
   ],
   imports: [
     FormsModule,
@@ -49,7 +49,8 @@ import { FileSelectDirective } from 'ng2-file-upload'
     ReactiveFormsModule,
     NgbModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FileUploadModule
   ],
   providers: [],
   bootstrap: [AppComponent]
