@@ -1,6 +1,19 @@
   <!-- advertisement-index.component.html -->
 
-  <div class="container" style="width: 100%">
+  <!-- LOADING -->
+<div class="loading-dots" *ngIf="isLoading">
+    <div class="spinner-grow" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <div class="spinner-grow" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <div class="spinner-grow" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+</div>
+
+  <div *ngIf="!isLoading" class="container" style="width: 100%">
     <div class="row" style="margin: 1pt; width: 100%">
       <div style="margin: 1pt; border: 1px lightgray solid" class="col-12" *ngFor="let advertisement of (advertisements$ | async)">
         <h3><a href="javascript:void(0)" [routerLink]="['/advertisement/detail', advertisement._id]">{{advertisement.title}}</a></h3>

@@ -20,6 +20,7 @@ import { AdvertisementEditComponent } from './components/advertisement/advertise
 import { AccountComponent } from './components/account/account.component';
 import { ProfileComponent } from './components/account/profile/profile.component';
 import { ChangePasswordComponent } from './components/account/change-password/change-password.component';
+import { FileSelectDirective } from 'ng2-file-upload'
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { ChangePasswordComponent } from './components/account/change-password/ch
     AdvertisementEditComponent,
     AccountComponent,
     ProfileComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    FileSelectDirective
   ],
   imports: [
     FormsModule,
