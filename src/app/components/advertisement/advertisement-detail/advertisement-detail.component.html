@@ -41,22 +41,22 @@
           <p class="lead">{{ comment.username }}</p>
           <p>{{ comment.content }}</p>
           <span style="display: inline" *ngIf="(isLoggedIn$ | async)">
-                  <a type="link" href="event.preventDefault()" data-toggle="modal" data-target="#replyModal">Reply</a>
+                  <a type="link" href="event.preventDefault()" data-toggle="modal" data-target="#replyModal" (click)="openModal(comment)" >Reply</a>
                 <span>  |  </span>
                     <a *ngIf="comment.username === loggedInUsername && comment.content !== '[deleted]'"
-                       type="link" href="event.preventDefault()" data-toggle="modal" data-target="#updateModal">Update/Delete</a>
+                       type="link" href="event.preventDefault()" data-toggle="modal" data-target="#updateModal" (click)="openModal(comment)">Update/Delete</a>
               </span>
         </div>
       </div>
 
       <!-- REPLY COMMENT MODAL -->
-      <div class="modal fade" id="replyModal" tabindex="-1" role="dialog" aria-labelledby="replyModal"
+      <div *ngIf="selectedComment != undefined" class="modal fade" id="replyModal" tabindex="-1" role="dialog" aria-labelledby="replyModal"
            aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="replyModalLongTitle">Reply to {{comment.username}}'s comment</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <h5 class="modal-title" id="replyModalLongTitle">Reply to {{selectedComment.username}}'s comment</h5>
+              <button type="button" #replyModal class="close" aria-label="Close" data-dismiss="modal">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
@@ -64,11 +64,11 @@
               <div bordered>
                 <h6>Comment:</h6>
                   <small>
-                     <p>"{{comment.content}}"</p>
+                     <p>"{{selectedComment.content}}"</p>
                   </small>
                 </div>
                 <h6>Reply:</h6>
-                <form [formGroup]="replyCommentForm" (ngSubmit)="onSubmitReplyComment(advertisement._id, comment._id)">
+                <form [formGroup]="replyCommentForm" (ngSubmit)="onSubmitReplyComment(advertisement._id, selectedComment._id)">
                 <textarea formControlName="comment" id="" cols="63" rows="3"></textarea>
                 <button type="submit" [disabled]="!replyCommentForm.valid" class="btn btn-primary">Reply</button>
               </form>
@@ -78,13 +78,13 @@
       </div>
 
       <!-- UPDATE/DELETE COMMENT MODAL -->
-      <div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="updateModal"
+      <div *ngIf="selectedComment != undefined" class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="updateModal"
            aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="updateModalLongTitle">Edit comment</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <button type="button" #updateModal class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
@@ -92,11 +92,11 @@
                 <div bordered>
                     <h6>Original comment:</h6>
                       <small>
-                         <p>"{{comment.content}}"</p>
+                         <p>"{{selectedComment.content}}"</p>
                       </small>
                     </div>
                     <h6>Update:</h6>
-              <form [formGroup]="updateCommentForm" (ngSubmit)="onSubmitUpdateComment(comment._id)">
+              <form [formGroup]="updateCommentForm" (ngSubmit)="onSubmitUpdateComment(selectedComment._id)">
                 <textarea formControlName="comment" id="sd" cols="63" rows="3"></textarea>
                 <button type="submit" [disabled]="!updateCommentForm.valid" class="btn btn-primary">Update</button>
               </form>
@@ -106,6 +106,24 @@
       </div>
     </div>
   </div>
+
+<!-- BIDDING LIST -->
+<div class="bidding-table">
+  <table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Username</th>
+        <th scope="col">Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>PLACEHOLDER</td>
+            <td>0,-</td>
+          </tr>
+    </tbody>
+  </table>
+</div>
 
   <hr class="my-4">
   <form [formGroup]="commentForm" (ngSubmit)="onSubmitAdvertisementComment()">

@@ -1,9 +1,11 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, ElementRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import { AdvertisementService } from '../../../services/advertisement.service';
 import {Observable, Subscription} from 'rxjs';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import { AuthenticationService } from '../../../services/authentication.service';
+import {ModalDirective} from "ngx-bootstrap";
+
 
 @Component({
   selector: 'app-advertisement-detail',
@@ -15,7 +17,7 @@ export class AdvertisementDetailComponent implements OnInit, OnDestroy {
   isLoggedIn$: Observable<boolean>;
   loggedInUsername: string;
   advertisement;
-  comment;
+  selectedComment;
   isLoading: boolean = true;
   isAdvertisementAuhorLoginName: boolean = false;
   commentForm: FormGroup;
@@ -23,10 +25,12 @@ export class AdvertisementDetailComponent implements OnInit, OnDestroy {
   updateCommentForm: FormGroup;
   newComments = [];
   getAdvertisementSubscription: Subscription;
+  @ViewChild ('replyModal', { static: false }) public replyModal: ElementRef;
+  @ViewChild ('updateModal', { static: false }) public updateModal: ElementRef;
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private advertisementService: AdvertisementService, 
+    private advertisementService: AdvertisementService,
     private authService: AuthenticationService,
     private router: Router
     ) { }
@@ -39,12 +43,7 @@ export class AdvertisementDetailComponent implements OnInit, OnDestroy {
         .subscribe(
           (result) => {
             this.advertisement = result;
-            this.unwindComments(this.advertisement.comments);
-            this.advertisement.comments = this.newComments;
-            this.loggedInUsername = this.authService.returnUsername();
-            if (this.authService.returnUsername() === this.advertisement.username) {
-              this.isAdvertisementAuhorLoginName = true; }
-              this.isLoading = false;
+            this.processComments();
           });
       });
 
@@ -57,7 +56,17 @@ export class AdvertisementDetailComponent implements OnInit, OnDestroy {
     this.updateCommentForm = new FormGroup({});
     this.updateCommentForm.addControl('comment', new FormControl(null, [Validators.required]));
   }
-  
+
+  processComments(){
+    this.newComments = [];
+    this.unwindComments(this.advertisement.comments);
+    this.advertisement.comments = this.newComments;
+    this.loggedInUsername = this.authService.returnUsername();
+    if (this.authService.returnUsername() === this.advertisement.username) {
+      this.isAdvertisementAuhorLoginName = true; }
+    this.isLoading = false;
+  }
+
   ngOnDestroy(): void {
     if (this.getAdvertisementSubscription !== undefined) {
       this.getAdvertisementSubscription.unsubscribe();
@@ -87,8 +96,15 @@ export class AdvertisementDetailComponent implements OnInit, OnDestroy {
     this.advertisementService.postCommentOnComment(replyCommentContent, advertisementId, commentId)
       .subscribe(
         () => {
-          console.log('comment succeeded');
-          this.advertisementService.getAdvertisement(advertisementId);
+          this.advertisementService.getAdvertisement(advertisementId)
+          .subscribe(
+            (result) => {
+              this.advertisement = result;
+              this.processComments();
+              this.replyModal.nativeElement.click();
+              console.log('comment succeeded');
+            }
+          )
         },
         () => {
           console.log('comment failed');
@@ -101,13 +117,25 @@ export class AdvertisementDetailComponent implements OnInit, OnDestroy {
     this.advertisementService.updateComment(commentId, updateCommentContent)
       .subscribe(
         () => {
-          console.log('comment succeeded');
           this.advertisementService.getAdvertisement(this.advertisement._id)
+            .subscribe(
+              (result) => {
+                this.advertisement = result;
+                this.processComments();
+                console.log('comment succeeded');
+                this.updateModal.nativeElement.click();
+              }
+            )
         },
         () => {
           console.log('comment failed');
         }
       );
+  }
+
+  openModal(comment){
+    console.log('openModal()');
+    this.selectedComment = comment;
   }
 
   private unwindComments(comments) {

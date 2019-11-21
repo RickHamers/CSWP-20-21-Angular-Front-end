@@ -22,8 +22,6 @@ import { AccountComponent } from './components/account/account.component';
 import { ProfileComponent } from './components/account/profile/profile.component';
 import { ChangePasswordComponent } from './components/account/change-password/change-password.component';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +40,6 @@ import { ChangePasswordComponent } from './components/account/change-password/ch
     AccountComponent,
     ProfileComponent,
     ChangePasswordComponent,
-    
   ],
   imports: [
     FormsModule,

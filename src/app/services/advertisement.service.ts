@@ -57,5 +57,13 @@ export class AdvertisementService {
   deleteComment(commentId: string) {
     return this.httpClient.delete(`${environment.apiUrl}/api/comment?id=` + commentId, {headers: this.authService.createHeader()});
   }
-  
+
+  /* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- BID -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
+  postBid(advertisementId: string, amount: Number){
+    return this.httpClient.post(`${environment.apiUrl}/api/advertisement/bids`, {amount: amount, username: this.authService.returnUsername, advertisementId: advertisementId}, {headers: this.authService.createHeader()});
+  }
+
+  deleteBid(bidId: string){
+    return this.httpClient.delete(`${environment.apiUrl}/api/bid` + bidId, {headers: this.authService.createHeader()});
+  }
 }
