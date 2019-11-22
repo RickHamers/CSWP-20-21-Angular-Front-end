@@ -4,8 +4,8 @@ import { AccountComponent } from './components/account/account.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { LoginComponent } from './components/login/login.component';
-import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './components/auth/login/login.component';
+import { RegisterComponent } from './components/auth/register/register.component';
 
 import { AboutComponent } from './components/about/about.component';
 import { AboutSummaryComponent } from './components/about/about-summary/about-summary.component';
