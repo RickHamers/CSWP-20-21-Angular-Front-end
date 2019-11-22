@@ -1,19 +1,26 @@
 # Changelog
 
-## [RHa] - Version 2.3.3 - 2019-11-19
+## [RHa] - Version 2.3.4 - 2019-11-22
+### General cleanup/refactoring/fixes
+* Cleanup code/Refactor code
+* Fix advertisement-detail component UI
+* Add grid system & bidding table to advertisement-detail component
+* Add input & button to bidding table
+
+## [RHa] - Version 2.3.3 - 2019-11-22
 ### Improve form styling 
 * Improve SCSS for Login, Register and Change Password forms
 * Move Login & Register components to "auth" folder
 * Fix routing/import issues for Login & Register components
 
-## [RHa] - Version 2.3.2 - 2019-11-19
-### Fix reply/update comments
+## [RHa] - Version 2.3.2 - 2019-11-21
+### Fix reply/update comments mappings & retrieval
 * Rectify issue of incorrect comment retrieval
 * Fix component refresh after update/reply
 * Add initial bidding list
 
 ## [RHa] - Version 2.3.1 - 2019-11-19
-### Fix reply/update comments
+### Fix reply/update comments & UI
 * Rectify issue of not being able to reply to comments
 * Add small UI/logic tweaks/cleanup/fixes
 
