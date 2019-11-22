@@ -1,5 +1,9 @@
 # Changelog
 
+## [RHa] - Version 2.4.1 - 2019-11-22
+### Add initial loading for advertisement index
+* Add initial rework of advertisement-index.component to implement loading.
+
 ## [RHa] - Version 2.4.0 - 2019-11-22
 ### Add delete comment functionality
 * Add delete comment logic & UI elements

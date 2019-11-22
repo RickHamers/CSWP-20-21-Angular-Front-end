@@ -1,3 +1,4 @@
+import { map } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { AdvertisementService } from '../../../services/advertisement.service';
@@ -9,22 +10,22 @@ import { AdvertisementService } from '../../../services/advertisement.service';
 })
 export class AdvertisementIndexComponent implements OnInit {
 
-  advertisements$; //any[] ?
+  advertisements$;
   isLoading: Boolean = false;
-  getAllAdvertisementsSubscription: Subscription;
+  getAllAdvertisements;
 
   constructor(private advertisementService: AdvertisementService) { }
 
   ngOnInit() {
-    // this.isLoading = true;
-    // this.getAllAdvertisementsSubscription = this.advertisementService.getAllAdvertisements()
-    // .subscribe(
-    //   (result) => {
-    //     console.log(result);
-    //     result = this.advertisements$
-    //     this.isLoading = false;
-    //   }
-    // )
-   this.advertisements$ = this.advertisementService.getAllAdvertisements();
+    //TODO CLEANUP
+    this.isLoading = true;
+    this.getAllAdvertisements = this.advertisementService.getAllAdvertisements()
+    .toPromise().
+    finally(
+      () => {
+        this.advertisements$ = this.getAllAdvertisements;
+        this.isLoading = false;
+      }
+    )
   }
 }
