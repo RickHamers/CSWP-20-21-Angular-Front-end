@@ -3,6 +3,7 @@
 ## [RHa] - Version 2.3.3 - 2019-11-19
 ### Improve form styling 
 * Improve SCSS for Login, Register and Change Password forms
+* Move Login & Register components to "auth" folder
 
 ## [RHa] - Version 2.3.2 - 2019-11-19
 ### Fix reply/update comments
