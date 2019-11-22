@@ -88,12 +88,19 @@ export class AdvertisementDetailComponent implements OnInit, OnDestroy {
     this.advertisementService.postCommentOnAdvertisement(comment, this.advertisement._id)
       .subscribe(
         () => {
-          console.log('comment succeeded');
           this.advertisement.comments.push({
             content: comment,
             username: this.authService.returnUsername(),
             depth: 0
           });
+          this.advertisementService.getAdvertisement(this.advertisement._id)
+          .subscribe(
+            (result) => {
+              this.advertisement = result;
+              this.processComments();
+              console.log('comment succeeded');
+            }
+          )    
         },
         () => {
           console.log('comment failed');
@@ -141,6 +148,27 @@ export class AdvertisementDetailComponent implements OnInit, OnDestroy {
           console.log('comment failed');
         }
       );
+  }
+
+  onDeleteComment(commentId){
+    console.log("OndeleteComment(" + commentId + ")")
+    this.advertisementService.deleteComment(commentId)
+    .subscribe(
+      () => {
+        this.advertisementService.getAdvertisement(this.advertisement._id)
+        .subscribe(
+          (result) => {
+            this.advertisement = result;
+            this.processComments();
+            console.log('delete comment succeeded');
+            this.updateModal.nativeElement.click();
+          }
+        )
+      },
+      () => {
+        console.log('delete comment failed');
+      }
+    )
   }
 
   openModal(comment){
