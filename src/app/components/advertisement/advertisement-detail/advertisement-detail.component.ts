@@ -4,8 +4,6 @@ import { AdvertisementService } from '../../../services/advertisement.service';
 import {Observable, Subscription} from 'rxjs';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import { AuthenticationService } from '../../../services/authentication.service';
-import {ModalDirective} from "ngx-bootstrap";
-
 
 @Component({
   selector: 'app-advertisement-detail',
@@ -65,6 +63,18 @@ export class AdvertisementDetailComponent implements OnInit, OnDestroy {
     if (this.authService.returnUsername() === this.advertisement.username) {
       this.isAdvertisementAuhorLoginName = true; }
     this.isLoading = false;
+  }
+
+  private unwindComments(comments) {
+    this.recursiveUnwind(comments, 0);
+  }
+
+  private recursiveUnwind(comments, depth: number) {
+    for(let comment of comments){
+      comment.depth = depth;
+      this.newComments.push(comment);
+      this.recursiveUnwind(comment.comments, depth + 1);
+    }
   }
 
   ngOnDestroy(): void {
@@ -136,18 +146,6 @@ export class AdvertisementDetailComponent implements OnInit, OnDestroy {
   openModal(comment){
     console.log('openModal()');
     this.selectedComment = comment;
-  }
-
-  private unwindComments(comments) {
-    this.recursiveUnwind(comments, 0);
-  }
-
-  private recursiveUnwind(comments, depth: number) {
-    for(let comment of comments){
-      comment.depth = depth;
-      this.newComments.push(comment);
-      this.recursiveUnwind(comment.comments, depth + 1);
-    }
   }
 
   onDelete() {
