@@ -1,5 +1,10 @@
 # Changelog
 
+## [RHa] - Version 2.4.0 - 2019-11-22
+### Add delete comment functionality
+* Add delete comment logic & UI elements
+* Rework AddCommentToAdvertisement to fix commentId = undefined on initial creation of an advertisement
+
 ## [RHa] - Version 2.3.4 - 2019-11-22
 ### General cleanup/refactoring/fixes
 * Cleanup code/Refactor code

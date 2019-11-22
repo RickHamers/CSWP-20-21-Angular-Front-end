@@ -138,8 +138,11 @@
                 <h6>Update:</h6>
                 <form [formGroup]="updateCommentForm" (ngSubmit)="onSubmitUpdateComment(selectedComment._id)">
                   <textarea formControlName="comment" id="sd" cols="63" rows="3"></textarea>
-                  <button type="submit" [disabled]="!updateCommentForm.valid" class="btn btn-primary">Update</button>
-                </form>
+                  <div class="btn-group" role="group">
+                      <button type="submit" [disabled]="!updateCommentForm.valid" class="btn btn-primary">Update</button>
+                      <button type="button" class="btn btn-danger" (click)="onDeleteComment(selectedComment._id)">Delete</button>
+                  </div>
+                </form>  
               </div>
             </div>
           </div>
