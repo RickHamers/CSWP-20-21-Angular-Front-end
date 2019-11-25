@@ -60,7 +60,7 @@ export class AdvertisementService {
 
   /* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- BID -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
   postBid(advertisementId: string, amount: Number){
-    return this.httpClient.post(`${environment.apiUrl}/api/advertisement/bids`, {amount: amount, username: this.authService.returnUsername, advertisementId: advertisementId}, {headers: this.authService.createHeader()});
+    return this.httpClient.post(`${environment.apiUrl}/api/advertisement/bids`, {amount: amount, username: this.authService.returnUsername(), advertisementId: advertisementId}, {headers: this.authService.createHeader()});
   }
 
   deleteBid(bidId: string){

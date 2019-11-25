@@ -23,6 +23,7 @@ export class AdvertisementDetailComponent implements OnInit, OnDestroy {
   replyCommentForm: FormGroup;
   updateCommentForm: FormGroup;
   newComments = [];
+  newBids = [];
   getAdvertisementSubscription: Subscription;
   @ViewChild ('replyModal', { static: false }) public replyModal: ElementRef;
   @ViewChild ('updateModal', { static: false }) public updateModal: ElementRef;

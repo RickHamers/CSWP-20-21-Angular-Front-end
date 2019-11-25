@@ -48,9 +48,9 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
+                  <tr *ngFor="let bid of advertisement.bids">
                     <td>PLACEHOLDER</td>
-                    <td>0,-</td>
+                    <td>{{bid}}</td>
                   </tr>
                   <tr>
                     <td>
