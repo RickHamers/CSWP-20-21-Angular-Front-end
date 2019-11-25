@@ -18,10 +18,12 @@ export class AdvertisementDetailComponent implements OnInit, OnDestroy {
   selectedComment;
   isLoading: boolean = true;
   isAdvertisementAuhorLoginName: boolean = false;
+  bidForm: FormGroup;
   commentForm: FormGroup;
   replyCommentForm: FormGroup;
   updateCommentForm: FormGroup;
   newComments = [];
+  newBids = [];
   getAdvertisementSubscription: Subscription;
   @ViewChild ('replyModal', { static: false }) public replyModal: ElementRef;
   @ViewChild ('updateModal', { static: false }) public updateModal: ElementRef;
@@ -44,6 +46,9 @@ export class AdvertisementDetailComponent implements OnInit, OnDestroy {
             this.processComments();
           });
       });
+
+    this.bidForm = new FormGroup({});
+    this.bidForm.addControl('bidAmount', new FormControl(null, [Validators.required]))
 
     this.commentForm = new FormGroup({});
     this.commentForm.addControl('comment', new FormControl(null, [Validators.required]));
@@ -81,6 +86,26 @@ export class AdvertisementDetailComponent implements OnInit, OnDestroy {
     if (this.getAdvertisementSubscription !== undefined) {
       this.getAdvertisementSubscription.unsubscribe();
     }
+  }
+
+  onSubmitBid() {
+    console.log('onSubmitBid')
+    this.advertisementService.postBid(this.advertisement._id, this.bidForm.value['bidAmount'])
+    .subscribe(
+      () => {
+        this.advertisementService.getAdvertisement(this.advertisement._id)
+        .subscribe(
+          (result) => {
+            this.advertisement = result;
+            this.processComments();
+            console.log('bid succeeded');
+          }
+        )
+      },
+      () => {
+        console.log('bid failed');
+      }
+    )
   }
 
   onSubmitAdvertisementComment() {

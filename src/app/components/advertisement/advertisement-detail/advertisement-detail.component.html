@@ -1,5 +1,6 @@
 <!-- advertisement-detail.component -->
 
+<!-- TITLEBAR -->
 <div class="text-lg-center">
     <h3 *ngIf="isLoading">Loading...</h3>
     <h3 *ngIf="!isLoading">{{advertisement.title}}</h3>
@@ -37,30 +38,34 @@
       <!-- BIDDING LIST -->
       <div class="col-1">
         <div class="bidding-table">
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th scope="col">Username</th>
-                <th scope="col">Amount</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>PLACEHOLDER</td>
-                <td>0,-</td>
-              </tr>
-              <tr>
-                <td>
-                  <input placeholder="amount" id="bid-input">
-                </td>
-                <td>
-                  <button class="btn btn-secondary">
-                    submit
-                  </button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <form [formGroup]="bidForm" (ngSubmit)="onSubmitBid()">
+            <div class="form-group">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">Username</th>
+                    <th scope="col">Amount</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let bid of advertisement.bids">
+                    <td>PLACEHOLDER</td>
+                    <td>{{bid}}</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="number" placeholder="amount" formControlName="bidAmount" id="bid-input">
+                    </td>
+                    <td>
+                      <button [disabled]="!bidForm.valid" type="submit" class="btn btn-secondary">
+                        submit
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </form>
         </div>
       </div>
     </div>
@@ -139,10 +144,10 @@
                 <form [formGroup]="updateCommentForm" (ngSubmit)="onSubmitUpdateComment(selectedComment._id)">
                   <textarea formControlName="comment" id="sd" cols="63" rows="3"></textarea>
                   <div class="btn-group" role="group">
-                      <button type="submit" [disabled]="!updateCommentForm.valid" class="btn btn-primary">Update</button>
-                      <button type="button" class="btn btn-danger" (click)="onDeleteComment(selectedComment._id)">Delete</button>
+                    <button type="submit" [disabled]="!updateCommentForm.valid" class="btn btn-primary">Update</button>
+                    <button type="button" class="btn btn-danger" (click)="onDeleteComment(selectedComment._id)">Delete</button>
                   </div>
-                </form>  
+                </form>
               </div>
             </div>
           </div>
