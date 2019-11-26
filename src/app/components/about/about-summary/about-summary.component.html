@@ -26,7 +26,7 @@
   </div>
   <h3>Entities</h3>
   <div class="row">
-    <div class="col-sm-12 col-md-4">
+    <div class="col-sm-12 col-md-3">
       <p class="lead">User account</p>
       <ul>
         <li class="lead">Username: string (Unique)</li>
@@ -34,17 +34,18 @@
         <li class="lead">Profile picture: image</li>
       </ul>
     </div>
-    <div class="col-sm-12 col-md-4">
+    <div class="col-sm-12 col-md-3">
       <p class="lead">Advertisement</p>
       <ul>
         <li class="lead">Title: string</li>
         <li class="lead">Image: image</li>
         <li class="lead">Content: string</li>
         <li class="lead">Author (Username): string</li>
+        <li class="lead">Bids: list of bid entities</li>
         <li class="lead">Comments: list of comment entities</li>
       </ul>
     </div>
-    <div class="col-sm-12 col-md-4">
+    <div class="col-sm-12 col-md-3">
       <p class="lead">Comment</p>
       <ul>
         <li class="lead">Content: string</li>
@@ -53,6 +54,14 @@
         <li class="lead">Upvote: number</li>
         <li class="lead">Downvote: number</li>
         <li class="lead">Sub-comments: List of comment entities</li>
+      </ul>
+    </div>
+    <div class="col-sm-12 col-md-3">
+      <p class="lead">Bid</p>
+      <ul>
+        <li class="lead">Amount: number</li>
+        <li class="lead">Username: string</li>
+        <li class="lead">Advertisement-ID: string</li>
       </ul>
     </div>
   </div>
