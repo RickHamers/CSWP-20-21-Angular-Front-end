@@ -1,13 +1,42 @@
 <!-- profile.component.html -->
 
 <div class="container">
-    <h4>Profile</h4>
-    <p class="lead">Profile picture:</p>
-    <div class="profile-picture-field">
-      <img src="" alt="" class="profile-picture-src">
+    <div class="row">
+      <div class="col col-6">
+        <h4>Profile</h4>
+        <p class="lead">Profile picture:</p>
+        <div class="profile-picture-field">
+          <img src="" alt="" class="profile-picture-src">
+        </div>
+        <input type="file" name="photo" ng2FileSelect [uploader]="uploader" />
+        <button type="button" class="btn btn-success btn-s" (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">
+          Upload image
+        </button>
+      </div>
+      <div class="col col-6">
+        <button class="btn btn-danger" data-toggle="modal" data-target="#deleteAccountModal">Delete Account</button>
+      </div>
     </div>
-    <input type="file" name="photo" ng2FileSelect [uploader]="uploader" />
-    <button type="button" class="btn btn-success btn-s" (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">
-      Upload image
-    </button>
   </div>
+  
+  
+  <!-- DELETE ACCOUNT MODAL -->
+  <div class="modal fade" id="deleteAccountModal" tabindex="-1" role="dialog" aria-labelledby="deleteAccountModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteAccountModalLongTitle">Delete account: {{ loggedInUsername }}</h5>
+          <button type="button" #deleteAccountModal class="close" aria-label="Close" data-dismiss="modal">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <p class="lead">Fill in your username to delete your account</p>
+            <form [formGroup]="deleteAccountForm" (ngSubmit)="onSubmitDeleteAccount()">
+              <input type="text" formControlName="username" id="username-input"/>
+              <button type="submit" [disabled]="!deleteAccountForm.valid" class="btn btn-danger">Delete</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>

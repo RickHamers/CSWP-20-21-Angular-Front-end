@@ -1,7 +1,13 @@
 # Changelog
 
-## [RHa] - Version 2.5.0 - 2019-11-26
-### PLACEHOLDER
+
+## [RHa] - Version 2.6.0 - 2019-11-26
+### Add initial delete user functionality & UI
+* Update profile.component to include delete account functionality & UI
+* Add deleteUser() functionality to authService
+
+## [RHa] - Version 2.5.0 - 2019-11-25
+### Add initial bidding functionality & UI
 * Update about-summary.component to include bid entities & bidding list
 
 ## [RHa] - Version 2.4.2 - 2019-11-25
