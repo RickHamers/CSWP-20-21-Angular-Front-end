@@ -1,3 +1,6 @@
+import { Router } from '@angular/router';
+import { AuthenticationService } from 'src/app/services/authentication.service';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { environment } from './../../../../environments/environment.prod';
 import { Component, OnInit } from '@angular/core';
 import { FileUploader, FileSelectDirective } from 'ng2-file-upload'
@@ -10,15 +13,44 @@ import { FileUploader, FileSelectDirective } from 'ng2-file-upload'
 
 export class ProfileComponent implements OnInit {
 
+  deleteAccountForm: FormGroup
+  loggedInUsername: string;
+
   public uploader: FileUploader = new FileUploader({url: environment.apiUrl + '/profile/photo', itemAlias: 'profilePicture'})
 
-  constructor() { }
+  constructor(
+    private authService: AuthenticationService,
+    private router: Router
+    ) { }
 
   ngOnInit() {
+    this.loggedInUsername = this.authService.returnUsername();
     this.uploader.onAfterAddingFile = (file) => { file.withCredentials = false; };
     this.uploader.onCompleteItem = (item: any, response: any, status: any, headers: any) => {
       console.log('FileUpload:uploaded:', item, status, response);
       alert('File uploaded succesfully');
+    }
+
+    this.deleteAccountForm = new FormGroup({});
+    this.deleteAccountForm.addControl('username', new FormControl(null, [Validators.required]))
+  }
+
+  onSubmitDeleteAccount() {
+    console.log('onSubmitDeleteAccount()');
+    if (this.deleteAccountForm.value['username'] == this.loggedInUsername ) {
+      this.authService.deleteAccount()
+      .subscribe(
+        () => {
+          console.log('Delete account succeeded');
+          this.router.navigate(['/login']);
+        }
+      ),
+      () => {
+        console.log('Delete account failed');
+      }
+    } else {
+      //TODO SHOW ALERT
+      console.log('Username did not match')
     }
   }
 }

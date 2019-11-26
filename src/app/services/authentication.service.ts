@@ -97,6 +97,10 @@ export class AuthenticationService {
     this.isLoggedIn$.next(false);
   }
 
+  deleteAccount(){
+    return this.httpclient.delete(`${environment.apiUrl}/api/user?id=` + this.returnUserID());
+  }
+
   get isLoggedIn() {
     return this.isLoggedIn$.asObservable();
   }

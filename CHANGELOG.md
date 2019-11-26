@@ -1,6 +1,16 @@
 # Changelog
 
-## [RHa] - Version 2.4.2 - 2019-11-22
+
+## [RHa] - Version 2.6.0 - 2019-11-26
+### Add initial delete user functionality & UI
+* Update profile.component to include delete account functionality & UI
+* Add deleteUser() functionality to authService
+
+## [RHa] - Version 2.5.0 - 2019-11-25
+### Add initial bidding functionality & UI
+* Update about-summary.component to include bid entities & bidding list
+
+## [RHa] - Version 2.4.2 - 2019-11-25
 ### Fix status 422 upon posting a bid
 * Change returnUsername to returnUsername() to fix 422: unprocessable entity
 * Add placeholder bids to advertisement-detail.component.html's table to show bid objectId's
