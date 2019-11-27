@@ -1,5 +1,9 @@
 # Changelog
 
+## [RHa] - Version 2.6.3 - 2019-11-27
+### Update delete user functionality
+* Add functionality to log the user out once the account has been deleted
+
 ## [RHa] - Version 2.6.2 - 2019-11-27
 ### Add handling for empty responses/objects
 * Add placeholders & handling for empty advertisement index/comments
