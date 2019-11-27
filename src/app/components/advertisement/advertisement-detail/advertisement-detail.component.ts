@@ -106,6 +106,7 @@ export class AdvertisementDetailComponent implements OnInit, OnDestroy {
         this.advertisementService.getAdvertisement(this.advertisement._id)
         .subscribe(
           (result) => {
+            this.bidForm.reset();
             this.advertisement = result;
             this.processComments();
             console.log('bid succeeded');
@@ -131,6 +132,7 @@ export class AdvertisementDetailComponent implements OnInit, OnDestroy {
           this.advertisementService.getAdvertisement(this.advertisement._id)
           .subscribe(
             (result) => {
+              this.commentForm.reset();
               this.advertisement = result;
               this.processComments();
               console.log('comment succeeded');
@@ -151,6 +153,7 @@ export class AdvertisementDetailComponent implements OnInit, OnDestroy {
           this.advertisementService.getAdvertisement(advertisementId)
           .subscribe(
             (result) => {
+              this.replyCommentForm.reset();
               this.advertisement = result;
               this.processComments();
               this.replyModal.nativeElement.click();
@@ -174,8 +177,10 @@ export class AdvertisementDetailComponent implements OnInit, OnDestroy {
               (result) => {
                 this.advertisement = result;
                 this.processComments();
-                console.log('comment succeeded');
                 this.updateModal.nativeElement.click();
+                this.updateCommentForm.reset();
+                console.log('comment succeeded');
+                
               }
             )
         },
@@ -197,6 +202,7 @@ export class AdvertisementDetailComponent implements OnInit, OnDestroy {
             this.processComments();
             console.log('delete comment succeeded');
             this.updateModal.nativeElement.click();
+            this.updateCommentForm.reset();
           }
         )
       },
