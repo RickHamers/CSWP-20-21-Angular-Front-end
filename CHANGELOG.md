@@ -1,5 +1,10 @@
 # Changelog
 
+## [RHa] - Version 2.6.2 - 2019-11-27
+### Add handling for empty responses/objects
+* Add placeholders & handling for empty advertisement index/comments
+* Add UI styling to Delete Account button in profile component
+
 ## [RHa] - Version 2.6.1 - 2019-11-27
 ### Fix delete user functionality
 * Fix 404 - Not found upon calling deleteUser()

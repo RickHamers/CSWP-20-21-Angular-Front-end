@@ -12,6 +12,7 @@ export class AdvertisementIndexComponent implements OnInit {
 
   advertisements$;
   isLoading: Boolean = false;
+  isEmptyIndex: boolean = false;
   getAllAdvertisements;
 
   constructor(private advertisementService: AdvertisementService) { }
@@ -24,6 +25,13 @@ export class AdvertisementIndexComponent implements OnInit {
     finally(
       () => {
         this.advertisements$ = this.getAllAdvertisements;
+        this.isLoading = false;
+      }
+      ).catch(
+      (error) => {
+        console.log('Error: ' + error.message)
+        console.log('No advertisements found')
+        this.isEmptyIndex = true;
         this.isLoading = false;
       }
     )

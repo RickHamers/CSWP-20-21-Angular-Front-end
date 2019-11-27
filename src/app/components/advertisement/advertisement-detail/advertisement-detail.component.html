@@ -79,7 +79,9 @@
         <hr class="my-4">
       </div>
     </div>
-  
+
+
+
     <!-- COMMENTS -->
     <div class="col-12">
       <h5>Comments</h5>
@@ -151,6 +153,13 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      <!-- EMPTY COMMENTS -->
+      <div *ngIf="isEmptyComments" class="col-12">
+        <div class="row">
+          <p class="lead">This advertisement doesn't have any comments yet.</p>
         </div>
       </div>
     </div>

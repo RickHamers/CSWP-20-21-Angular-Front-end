@@ -17,6 +17,7 @@ export class AdvertisementDetailComponent implements OnInit, OnDestroy {
   advertisement;
   selectedComment;
   isLoading: boolean = true;
+  isEmptyComments: boolean = false;
   isAdvertisementAuhorLoginName: boolean = false;
   bidForm: FormGroup;
   commentForm: FormGroup;
@@ -68,6 +69,15 @@ export class AdvertisementDetailComponent implements OnInit, OnDestroy {
     if (this.authService.returnUsername() === this.advertisement.username) {
       this.isAdvertisementAuhorLoginName = true; }
     this.isLoading = false;
+
+    //Check for empty comments
+    if(this.advertisement.comments == ""){
+      console.log('No comments found')
+      this.isEmptyComments = true;
+    } else {
+      this.isEmptyComments = false;
+      console.log('Found comments')
+    }
   }
 
   private unwindComments(comments) {
