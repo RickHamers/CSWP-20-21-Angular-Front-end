@@ -98,7 +98,7 @@ export class AuthenticationService {
   }
 
   deleteAccount(){
-    return this.httpclient.delete(`${environment.apiUrl}/api/user?id=` + this.returnUserID());
+    return this.httpclient.delete(`${environment.apiUrl}/api/delete-account?id=` + this.returnUserID(), {headers: this.createHeader()});
   }
 
   get isLoggedIn() {
