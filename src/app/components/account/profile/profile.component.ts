@@ -44,6 +44,7 @@ export class ProfileComponent implements OnInit {
         () => {
           console.log('Delete account succeeded');
           this.deleteAccountModal.nativeElement.click();
+          this.authService.logout();
           this.router.navigate(['/login']);
         }
       ),
