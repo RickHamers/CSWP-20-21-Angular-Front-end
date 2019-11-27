@@ -1,5 +1,9 @@
 # Changelog
 
+## [RHa] - Version 2.6.4 - 2019-11-27
+### Update forms to be cleared after submissions
+* Update form functionalities to clear the forms they adhere to after submissions
+
 ## [RHa] - Version 2.6.3 - 2019-11-27
 ### Update delete user functionality
 * Add functionality to log the user out once the account has been deleted
