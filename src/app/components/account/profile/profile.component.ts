@@ -2,7 +2,7 @@ import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { environment } from './../../../../environments/environment.prod';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FileUploader, FileSelectDirective } from 'ng2-file-upload'
 
 @Component({
@@ -15,6 +15,7 @@ export class ProfileComponent implements OnInit {
 
   deleteAccountForm: FormGroup
   loggedInUsername: string;
+  @ViewChild ('deleteAccountModal', { static: false }) public deleteAccountModal: ElementRef;
 
   public uploader: FileUploader = new FileUploader({url: environment.apiUrl + '/profile/photo', itemAlias: 'profilePicture'})
 
@@ -42,6 +43,7 @@ export class ProfileComponent implements OnInit {
       .subscribe(
         () => {
           console.log('Delete account succeeded');
+          this.deleteAccountModal.nativeElement.click();
           this.router.navigate(['/login']);
         }
       ),

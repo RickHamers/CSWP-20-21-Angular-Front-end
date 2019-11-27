@@ -1,5 +1,9 @@
 # Changelog
 
+## [RHa] - Version 2.6.1 - 2019-11-27
+### Fix delete user functionality
+* Fix 404 - Not found upon calling deleteUser()
+* Add closing modal and routing to /login on account deletion
 
 ## [RHa] - Version 2.6.0 - 2019-11-26
 ### Add initial delete user functionality & UI
