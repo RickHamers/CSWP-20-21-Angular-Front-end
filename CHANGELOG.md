@@ -1,5 +1,9 @@
 # Changelog
 
+## [RHa] - Version 2.6.5 - 2019-11-28
+### Update advertisement-detail.component bidding list
+* Update advertisement-detail.component to show bidding username & amount
+
 ## [RHa] - Version 2.6.4 - 2019-11-27
 ### Update forms to be cleared after submissions
 * Update form functionalities to clear the forms they adhere to after submissions

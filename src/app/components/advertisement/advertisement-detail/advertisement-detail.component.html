@@ -12,7 +12,7 @@
     </span>
     <hr class="my-4">
   </div>
-  
+
   <!-- LOADING -->
   <div class="loading-dots" *ngIf="isLoading">
     <div class="spinner-grow" role="status">
@@ -25,16 +25,16 @@
       <span class="sr-only">Loading...</span>
     </div>
   </div>
-  
+
   <!-- AFTER LOADING -->
   <div class="container" *ngIf="!isLoading">
     <div class="row">
-  
+
       <!-- ADVERTISEMENT -->
       <div class="col-11">
         <p>{{advertisement.content}}</p>
       </div>
-  
+
       <!-- BIDDING LIST -->
       <div class="col-1">
         <div class="bidding-table">
@@ -49,8 +49,8 @@
                 </thead>
                 <tbody>
                   <tr *ngFor="let bid of advertisement.bids">
-                    <td>PLACEHOLDER</td>
-                    <td>{{bid}}</td>
+                    <td>{{bid.username}}</td>
+                    <td>{{bid.amount}}</td>
                   </tr>
                   <tr>
                     <td>
@@ -69,7 +69,7 @@
         </div>
       </div>
     </div>
-  
+
     <div class="row">
       <div class="col-12">
         <hr class="my-4">
@@ -97,7 +97,7 @@
             </span>
           </div>
         </div>
-  
+
         <!-- REPLY COMMENT MODAL -->
         <div *ngIf="selectedComment != undefined" class="modal fade" id="replyModal" tabindex="-1" role="dialog" aria-labelledby="replyModal" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document">
@@ -124,7 +124,7 @@
             </div>
           </div>
         </div>
-  
+
         <!-- UPDATE/DELETE COMMENT MODAL -->
         <div *ngIf="selectedComment != undefined" class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="updateModal" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document">
@@ -163,7 +163,7 @@
         </div>
       </div>
     </div>
-  
+
     <!-- NEW COMMENT FORM --->
     <hr class="my-4">
     <form [formGroup]="commentForm" (ngSubmit)="onSubmitAdvertisementComment()">
@@ -173,4 +173,3 @@
       <button type="submit" [disabled]="!commentForm.valid" class="btn btn-primary">Comment</button>
     </form>
   </div>
-  
