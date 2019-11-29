@@ -17,6 +17,8 @@ export class AdvertisementDetailComponent implements OnInit, OnDestroy {
   advertisement;
   selectedComment;
   isLoading: boolean = true;
+  isBiddingTableLoading: boolean = false;
+  isBiddingTableSubmitLoading: boolean = false;
   isEmptyComments: boolean = false;
   isAdvertisementAuhorLoginName: boolean = false;
   bidForm: FormGroup;
@@ -37,6 +39,8 @@ export class AdvertisementDetailComponent implements OnInit, OnDestroy {
     ) { }
 
   ngOnInit() {
+    this.isLoading = true;
+    this.isBiddingTableLoading = true;
     this.isLoggedIn$ = this.authService.isLoggedIn;
     this.activatedRoute.params.subscribe(
       (result) => {
@@ -45,6 +49,8 @@ export class AdvertisementDetailComponent implements OnInit, OnDestroy {
           (result) => {
             this.advertisement = result;
             this.processComments();
+            this.isLoading = false;
+            this.isBiddingTableLoading = false;
           });
       });
 
@@ -68,7 +74,6 @@ export class AdvertisementDetailComponent implements OnInit, OnDestroy {
     this.loggedInUsername = this.authService.returnUsername();
     if (this.authService.returnUsername() === this.advertisement.username) {
       this.isAdvertisementAuhorLoginName = true; }
-    this.isLoading = false;
 
     //Check for empty comments
     if(this.advertisement.comments == ""){
@@ -99,6 +104,8 @@ export class AdvertisementDetailComponent implements OnInit, OnDestroy {
   }
 
   onSubmitBid() {
+    this.isBiddingTableLoading = true;
+    this.isBiddingTableSubmitLoading = true;
     console.log('onSubmitBid')
     this.advertisementService.postBid(this.advertisement._id, this.bidForm.value['bidAmount'])
     .subscribe(
@@ -109,11 +116,15 @@ export class AdvertisementDetailComponent implements OnInit, OnDestroy {
             this.bidForm.reset();
             this.advertisement = result;
             this.processComments();
+            this.isBiddingTableLoading = false;
+            this.isBiddingTableSubmitLoading = false;
             console.log('bid succeeded');
           }
         )
       },
       () => {
+        this.isBiddingTableLoading = false;
+        this.isBiddingTableSubmitLoading = false;
         console.log('bid failed');
       }
     )

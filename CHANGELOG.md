@@ -1,5 +1,10 @@
 # Changelog
 
+## [RHa] - Version 2.6.6 - 2019-11-29
+### Update advertisement-detail.component bidding list
+* Update advertisement-detail.component to show loaders during processing
+* Update advertisement-detail.component to show loader in submit button during bid submission
+
 ## [RHa] - Version 2.6.5 - 2019-11-28
 ### Update advertisement-detail.component bidding list
 * Update advertisement-detail.component to show bidding username & amount
