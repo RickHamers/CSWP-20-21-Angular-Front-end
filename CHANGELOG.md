@@ -1,5 +1,9 @@
 # Changelog
 
+## [RHa] - Version 2.7.1- 2019-12-2
+### Fix upload profile picture functionality
+* Remove parameter from uploadProfilePicture() call in profile.component.html
+
 ## [RHa] - Version 2.7.0 - 2019-12-2
 ### Add upload profile picture functionality
 * Add user.service with profile picture routes
