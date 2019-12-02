@@ -6,10 +6,10 @@
         <h4>Profile</h4>
         <p class="lead">Profile picture:</p>
         <div class="profile-picture-field">
-          <img src="" alt="" class="profile-picture-src">
+          <img id="preview" [src]="imageSource" alt="" class="profile-picture-src">
         </div>
-        <input type="file" name="photo" ng2FileSelect [uploader]="uploader" />
-        <button type="button" class="btn btn-success btn-s" (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">
+        <input type="file" name="photo" (change)="previewPhoto($event)" />
+        <button type="button" class="btn btn-success btn-s" (click)="uploadProfilePicture($event)" [disabled]="!imageSource">
           Upload image
         </button>
       </div>
@@ -18,8 +18,8 @@
       </div>
     </div>
   </div>
-  
-  
+
+
   <!-- DELETE ACCOUNT MODAL -->
   <div class="modal fade" id="deleteAccountModal" tabindex="-1" role="dialog" aria-labelledby="deleteAccountModal" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">

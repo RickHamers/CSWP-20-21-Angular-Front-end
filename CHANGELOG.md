@@ -1,5 +1,10 @@
 # Changelog
 
+## [RHa] - Version 2.7.0 - 2019-12-2
+### Add upload profile picture functionality
+* Add user.service with profile picture routes
+* Update profile.component with profile picture functions
+
 ## [RHa] - Version 2.6.6 - 2019-11-29
 ### Update advertisement-detail.component bidding list
 * Update advertisement-detail.component to show loaders during processing
