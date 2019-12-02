@@ -9,7 +9,7 @@
           <img id="preview" [src]="imageSource" alt="" class="profile-picture-src">
         </div>
         <input type="file" name="photo" (change)="previewPhoto($event)" />
-        <button type="button" class="btn btn-success btn-s" (click)="uploadProfilePicture($event)" [disabled]="!imageSource">
+        <button type="button" class="btn btn-success btn-s" (click)="uploadProfilePicture()" [disabled]="!imageSource">
           Upload image
         </button>
       </div>
