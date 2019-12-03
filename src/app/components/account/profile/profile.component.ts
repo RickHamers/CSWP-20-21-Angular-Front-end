@@ -82,12 +82,8 @@ export class ProfileComponent implements OnInit {
     this.userService.getProfilePicture()
     .subscribe(
       (result) => {
-       let resultString = JSON.stringify(result);
-       let substring = resultString.substring(resultString.indexOf(',' + 1), resultString.indexOf('}'))
-      //var image = btoa(resultString.substring(resultString.indexOf(',' + 1), resultString.indexOf('}')));
-      console.log("Formatted:" + "\n" +  substring)
-      var image = btoa(resultString);
-        this.imageSource  = image;
+       let resultString = JSON.stringify(result)
+        this.imageSource  = resultString.substring(resultString.indexOf(',' + 1), resultString.indexOf('}'))
         this.isProfilePictureLoading = false;
         console.log('retrievePhoto() succeeded');
       },
