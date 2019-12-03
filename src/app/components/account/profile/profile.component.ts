@@ -17,6 +17,7 @@ export class ProfileComponent implements OnInit {
   imageSource: string
   deleteAccountForm: FormGroup
   loggedInUsername: string;
+  isProfilePictureLoading: boolean;
   @ViewChild('deleteAccountModal', {static: false}) public deleteAccountModal: ElementRef;
 
   public uploader: FileUploader = new FileUploader({
@@ -33,13 +34,7 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
     this.loggedInUsername = this.authService.returnUsername();
-    this.uploader.onAfterAddingFile = (file) => {
-      file.withCredentials = false;
-    };
-    this.uploader.onCompleteItem = (item: any, response: any, status: any, headers: any) => {
-      console.log('FileUpload:uploaded:', item, status, response);
-      alert('File uploaded succesfully');
-    }
+    this.retrievePhoto();
 
     this.deleteAccountForm = new FormGroup({});
     this.deleteAccountForm.addControl('username', new FormControl(null, [Validators.required]))
@@ -80,6 +75,27 @@ export class ProfileComponent implements OnInit {
     } catch (e) {
       console.log(e);
     }
+  }
+
+  retrievePhoto(){
+    this.isProfilePictureLoading = true;
+    this.userService.getProfilePicture()
+    .subscribe(
+      (result) => {
+       let resultString = JSON.stringify(result);
+       let substring = resultString.substring(resultString.indexOf(',' + 1), resultString.indexOf('}'))
+      //var image = btoa(resultString.substring(resultString.indexOf(',' + 1), resultString.indexOf('}')));
+      console.log("Formatted:" + "\n" +  substring)
+      var image = btoa(resultString);
+        this.imageSource  = image;
+        this.isProfilePictureLoading = false;
+        console.log('retrievePhoto() succeeded');
+      },
+      () => {
+        this.isProfilePictureLoading = false;
+        console.log('retrievePhoto() failed');
+      }
+    )
   }
 
   previewPhoto(inputFile: any) {
