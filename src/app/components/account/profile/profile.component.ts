@@ -83,7 +83,12 @@ export class ProfileComponent implements OnInit {
     .subscribe(
       (result) => {
        let resultString = JSON.stringify(result)
-        this.imageSource  = resultString.substring(resultString.indexOf(',' + 1), resultString.indexOf('}'))
+       console.log(resultString)
+
+       let resultObject = JSON.parse(resultString)
+       console.log("profilePicture: " + resultObject.profilePicture)
+
+       this.imageSource = resultObject.profilePicture
         this.isProfilePictureLoading = false;
         console.log('retrievePhoto() succeeded');
       },
