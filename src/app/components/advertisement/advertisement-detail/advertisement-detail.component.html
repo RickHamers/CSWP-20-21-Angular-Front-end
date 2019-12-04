@@ -84,9 +84,12 @@
     <div class="row">
       <div class="col-12">
         <hr class="my-4">
-        <small>
-          <p>Author: {{advertisement.username}}</p>
-        </small>
+        <p id="authorField">
+            <img id="authorImage" [src]="authorImageSource" alt="avatar" class="authorImage">
+            <small>
+              <p>Author: {{advertisement.username}}</p>
+            </small>
+          </p>
         <hr class="my-4">
       </div>
     </div>

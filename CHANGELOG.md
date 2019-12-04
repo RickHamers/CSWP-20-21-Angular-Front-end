@@ -1,5 +1,10 @@
 # Changelog
 
+## [RHa] - Version 2.7.4 - 2019-12-4
+### Update profile picture usage
+* Update advertisement-detail.component to load & show the author's profile picture
+* Add getUserProfilePicture function to user.service which accepts a username as a string parameter to retrieve someone else's profile picture
+
 ## [RHa] - Version 2.7.3 - 2019-12-4
 ### Add alerts for uploading profile pictures
 * Add success alert for profile picture upload in profile.component
