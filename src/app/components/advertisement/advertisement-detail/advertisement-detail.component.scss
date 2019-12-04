@@ -8,3 +8,25 @@
 .table td  {
     padding: .50rem;
 }
+
+.authorImage {
+    max-width: 50px;
+    max-height: 50px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 50%;
+}
+
+.authorField {
+    display: flex;
+}
+
+.authorText {
+    
+}
+
+.authorName {
+    position: relative;
+    top: 25%;
+    left: 8%;
+}

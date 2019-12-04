@@ -1,3 +1,4 @@
+import { UserService } from './../../../services/user.service';
 import {Component, ElementRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import { AdvertisementService } from '../../../services/advertisement.service';
@@ -16,6 +17,7 @@ export class AdvertisementDetailComponent implements OnInit, OnDestroy {
   loggedInUsername: string;
   advertisement;
   selectedComment;
+  authorImageSource: string
   isLoading: boolean = true;
   isBiddingTableLoading: boolean = false;
   isBiddingTableSubmitLoading: boolean = false;
@@ -35,6 +37,7 @@ export class AdvertisementDetailComponent implements OnInit, OnDestroy {
     private activatedRoute: ActivatedRoute,
     private advertisementService: AdvertisementService,
     private authService: AuthenticationService,
+    private userService: UserService,
     private router: Router
     ) { }
 
@@ -49,6 +52,7 @@ export class AdvertisementDetailComponent implements OnInit, OnDestroy {
           (result) => {
             this.advertisement = result;
             this.processComments();
+            this.getAuthorImage();
             this.isLoading = false;
             this.isBiddingTableLoading = false;
           });
@@ -83,6 +87,30 @@ export class AdvertisementDetailComponent implements OnInit, OnDestroy {
       this.isEmptyComments = false;
       console.log('Found comments')
     }
+  }
+
+  getAuthorImage(){
+    this.userService.getUserProfilePicture(this.advertisement.username)
+    .subscribe(
+      (result) => {
+        let resultString = JSON.stringify(result)
+        console.log(resultString)
+ 
+        let resultObject = JSON.parse(resultString)
+        console.log("profilePicture: " + resultObject.profilePicture)
+
+        if(resultObject.profilePicture == undefined){
+          this.authorImageSource = 'https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg'
+          console.log('Author doesn\'t have a profile picture, using placeholder')
+        } else {
+          this.authorImageSource = resultObject.profilePicture
+          console.log('Retrieved author\'s profile picture succesfully')
+        }      
+      },
+       () => {
+        console.log('Failed to retrieve the author\'s profile picture')
+      }
+    )
   }
 
   private unwindComments(comments) {
