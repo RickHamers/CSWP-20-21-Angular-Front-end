@@ -1,10 +1,16 @@
 # Changelog
 
-## [RHa] - Version 2.7.2- 2019-12-2
+## [RHa] - Version 2.7.3 - 2019-12-4
+### Add alerts for uploading profile pictures
+* Add success alert for profile picture upload in profile.component
+* Add danger alert for profile picture upload in profile.component
+* Fix dates in CHANGELOG.md
+
+## [RHa] - Version 2.7.2- 2019-12-4
 ### Fix retrieve profile picture functionality
 * Add JSON Stringify & JSON Parse to convert the profilePicture MongoDB profile element to a viewable image
 
-## [RHa] - Version 2.7.1- 2019-12-2
+## [RHa] - Version 2.7.1- 2019-12-3
 ### Fix upload profile picture functionality
 * Remove parameter from uploadProfilePicture() call in profile.component.html
 

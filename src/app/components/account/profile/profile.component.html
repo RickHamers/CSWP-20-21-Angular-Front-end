@@ -40,3 +40,8 @@
         </div>
       </div>
     </div>
+
+    <!-- ALERTS -->
+    <p *ngIf="showAlert" class="alert">
+      <ngb-alert [type]="alert.type" (close)="closeAlert()">{{ alert.message }}</ngb-alert>
+    </p>
