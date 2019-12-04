@@ -18,6 +18,11 @@ export class ProfileComponent implements OnInit {
   deleteAccountForm: FormGroup
   loggedInUsername: string;
   isProfilePictureLoading: boolean;
+  showAlert: boolean = false;
+  alert = {
+    type: "",
+    message: ""
+  }
   @ViewChild('deleteAccountModal', {static: false}) public deleteAccountModal: ElementRef;
 
   public uploader: FileUploader = new FileUploader({
@@ -67,9 +72,19 @@ export class ProfileComponent implements OnInit {
         .subscribe(
           () => {
             console.log('uploadProfilePicture() succeeded');
+            this.alert = {
+              type: "success",
+              message: "Upload succesful!"
+            }
+            this.showAlert = true;
           },
           () => {
             console.log('uploadProfilePicture() failed');
+            this.alert = {
+              type: "danger",
+              message: "Upload failed. Is your image too big?"
+            }
+            this.showAlert = true;
           }
         )
     } catch (e) {
@@ -112,5 +127,9 @@ export class ProfileComponent implements OnInit {
     } catch (e) {
       console.log(e);
     }
+  }
+
+  closeAlert() {
+    this.showAlert = false;
   }
 }
