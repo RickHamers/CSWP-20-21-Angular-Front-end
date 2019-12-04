@@ -1,5 +1,9 @@
 # Changelog
 
+## [RHa] - Version 2.7.5 - 2019-12-4
+### Update advertisement-detail.component styling
+* Update styling for author in advertisement-detail.component
+
 ## [RHa] - Version 2.7.4 - 2019-12-4
 ### Update profile picture usage
 * Update advertisement-detail.component to load & show the author's profile picture
