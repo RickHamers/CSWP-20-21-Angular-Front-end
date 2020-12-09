@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AdvertisementDetailComponent } from './advertisement-detail.component';
+import {RouterTestingModule} from "@angular/router/testing";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
 
 describe('AdvertisementDetailComponent', () => {
   let component: AdvertisementDetailComponent;
@@ -8,7 +11,10 @@ describe('AdvertisementDetailComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AdvertisementDetailComponent ]
+      declarations: [ AdvertisementDetailComponent ],
+      imports: [RouterTestingModule,
+      FormsModule, ReactiveFormsModule,
+      HttpClientModule]
     })
     .compileComponents();
   }));

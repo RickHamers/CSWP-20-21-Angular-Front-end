@@ -5,8 +5,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import {AboutComponent} from './components/about/about.component';
 import {NotFoundComponent} from './components/not-found/not-found.component';
-import {LoginComponent} from './components/login/login.component';
+import {LoginComponent} from './components/auth/login/login.component';
 import {NavigationMenuComponent} from './components/navigation-menu/navigation-menu.component';
+import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -15,7 +16,8 @@ describe('AppComponent', () => {
         RouterTestingModule,
         FormsModule,
         HttpClientModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        NgbModule
       ],
       declarations: [
         AppComponent,
