@@ -9,13 +9,13 @@
         <form [formGroup]="loginForm" class="form-login" (ngSubmit)="onSubmit()">
           <div class="form-group">
             <label>Username:</label>
-            <input id="username-input" title="username" type="text" class="form-control" formControlName="username" required/>
+            <input id="username-input" name="username-input" title="username" type="text" class="form-control" formControlName="username" required/>
           </div>
           <div class="form-group">
             <label>Password:</label>
-            <input id="password-input" title="password" type="password" class="form-control" formControlName="password" required/>
+            <input id="password-input" name="password-input" title="password" type="password" class="form-control" formControlName="password" required/>
           </div>
-          <button id="login-button" type="submit" [disabled]="!loginForm.valid" class="btn btn-primary">
+          <button id="login-button" name="login-button" type="submit" [disabled]="!loginForm.valid" class="btn btn-primary">
               <span *ngIf="isLoading" class="spinner-grow spinner-grow-sm"></span>
             Log in
           </button>
