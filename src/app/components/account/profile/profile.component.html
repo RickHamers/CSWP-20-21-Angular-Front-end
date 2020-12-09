@@ -14,7 +14,7 @@
         </button>
       </div>
       <div class="col col-6">
-        <button class="btn btn-danger" data-toggle="modal" data-target="#deleteAccountModal">Delete Account</button>
+        <button name="delete-account-button" class="btn btn-danger" data-toggle="modal" data-target="#deleteAccountModal">Delete Account</button>
       </div>
     </div>
   </div>
@@ -33,8 +33,8 @@
         <div class="modal-body">
             <p class="lead">Fill in your username to delete your account</p>
             <form [formGroup]="deleteAccountForm" (ngSubmit)="onSubmitDeleteAccount()">
-              <input type="text" formControlName="username" id="username-input"/>
-              <button type="submit" [disabled]="!deleteAccountForm.valid" class="btn btn-danger">Delete</button>
+              <input name="modal-username-input" type="text" formControlName="username" id="username-input"/>
+              <button id="modal-delete-button" type="submit" [disabled]="!deleteAccountForm.valid" class="btn btn-danger">Delete</button>
             </form>
           </div>
         </div>

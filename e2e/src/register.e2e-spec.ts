@@ -2,7 +2,7 @@ import {LoginPage} from "./login.po";
 import {browser} from "protractor";
 import {RegisterPage} from "./register.po";
 
-describe('Registration tests', () => {
+describe('------- REGISTRATION FLOW TESTS -------' + '\n', () => {
   let page: RegisterPage;
   beforeEach(() => {
     page = new RegisterPage();
@@ -12,7 +12,7 @@ describe('Registration tests', () => {
   it("when registration is unsuccessful — user should stay on the register page", async() => {
     page.getUsernameTextbox().sendKeys("test");
     page.getPasswordTextbox().sendKeys("test");
-    page.getLoginButton().click();
+    page.getCreateAccountButton().click();
 
     expect(browser.getCurrentUrl()).toBe(browser.baseUrl + 'register');
   });
