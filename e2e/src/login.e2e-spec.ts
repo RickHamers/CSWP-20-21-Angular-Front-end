@@ -1,7 +1,7 @@
 import {LoginPage} from "./login.po";
 import {browser, by, element, protractor} from "protractor";
 
-describe('Login tests', () => {
+describe('------- LOGIN FLOW TESTS -------' + '\n', () => {
   let page: LoginPage;
 
   beforeEach(() => {

@@ -12,7 +12,7 @@ export class RegisterPage {
     return element(by.name('password-input'));
   }
 
-  getLoginButton() {
+  getCreateAccountButton() {
     return element(by.name('submit-button'))
   }
 }

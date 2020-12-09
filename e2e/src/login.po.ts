@@ -16,6 +16,10 @@ export class LoginPage {
     return element(by.name('login-button'))
   }
 
+  getCreateAccountLink(){
+    return element(by.name('create-account-link'))
+  }
+
   getLocalStorageObject(key) {
     return browser.executeScript(`return window.localStorage.getItem(arguments[0]);`, key);
   }
